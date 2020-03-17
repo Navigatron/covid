@@ -1,4 +1,5 @@
 id,name,rate
+06061,Placer,8
 comment,state header,----------------------------------------------------- Maine
 unknown,unknown,6 cases not in any county
 23001,Androscoggin,3
@@ -17,6 +18,17 @@ unknown,unknown,6 cases not in any county
 23027,Waldo,0
 23029,Washington,0
 23031,York,1
+comment,state header,--------------------------------------------- New Hampshire
+33001,Belknap,0
+33003,Carroll,1
+33005,Cheshire,0
+33007,Coos,0
+33009,Grafton,7
+33011,Hillsborough,4
+33013,Merrimack,0
+33015,Rockingham,14
+33017,Strafford,0
+33019,Sullivan,0
 comment,state header,------------------------------------------------ New Jersey
 34001,Atlantic,0
 34003,Bergen,84
