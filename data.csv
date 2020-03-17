@@ -19,25 +19,25 @@ unknown,unknown,6 cases not in any county
 23031,York,1
 comment,state header,------------------------------------------------ New Jersey
 34001,Atlantic,0
-34003,Bergen,29
-34005,Burlington,4
-34007,Camden,2
+34003,Bergen,84
+34005,Burlington,5
+34007,Camden,3
 34009,Cape May,0
 34011,Cumberland,0
-34013,Essex,11
-34015,Gloucester,0
-34017,Hudson,11
-34019,Hunterdon,0
-34021,Mercer,0
-34023,Middlesex,12
-34025,Monmouth,12
-34027,Morris,4
-34029,Ocean,2
-34031,Passaic,5
+34013,Essex,32
+34015,Gloucester,2
+34017,Hudson,24
+34019,Hunterdon,4
+34021,Mercer,9
+34023,Middlesex,22
+34025,Monmouth,22
+34027,Morris,7
+34029,Ocean,4
+34031,Passaic,10
 34033,Salem,0
-34035,Somerset,0
+34035,Somerset,7
 34037,Sussex,0
-34039,Union,4
+34039,Union,15
 34041,Warren,0
 comment,state header,-------------------------------------------------- New York
 36001,Albany,23
