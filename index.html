@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Choropleth - my first</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A by-county map of Covid-19 in the US. No silly circles.">
+	<title>Covid-19 by county</title>
 	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/queue.v1.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
@@ -191,7 +193,11 @@
 	// Create the svg
 	var svg = d3.select("#map").append("svg")
 		.attr("width", width)
+		//.attr("max-width", "100%")
+		.attr("viewBox", "0 0 "+width+" "+height)
 		.attr("height", height)
+		.style("max-width", "100%")
+		.style("height", "100%")
 		.style("margin", "0px auto");
 
 	// It looks like this does the actual stuff.
