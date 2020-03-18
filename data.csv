@@ -168,6 +168,43 @@ comment,The above line is NYC,-
 36119,Westchester,380
 36121,Wyoming,1
 36123,Yates,0
+comment,state header,---------------------------------------------------- Oregon
+41001,Baker,0
+41003,Benton,2
+41005,Clackamas,6
+41007,Clatsop,0
+41009,Columbia,0
+41011,Coos,0
+41013,Crook,0
+41015,Curry,0
+41017,Deschutes,6
+41019,Douglas,1
+41021,Gilliam,0
+41023,Grant,0
+41025,Harney,0
+41027,Hood River,0
+41029,Jackson,2
+41031,Jefferson,0
+41033,Josephine,0
+41035,Klamath,1
+41037,Lake,0
+41039,Lane,0
+41041,Lincoln,0
+41043,Linn,15
+41045,Malheur,0
+41047,Marion,4
+41049,Morrow,0
+41051,Multnomah,3
+41053,Polk,1
+41055,Sherman,0
+41057,Tillamook,0
+41059,Umatilla,2
+41061,Union,0
+41063,Wallowa,0
+41065,Wasco,0
+41067,Washington,21
+41069,Wheeler,0
+41071,Yamhill,1
 comment,state header,---------------------------------------------- Pennsylvania
 42001,Adams,0
 42003,Allegheny,7
