@@ -13,6 +13,74 @@ comment,state header,-------------------------------------------------- Delaware
 10001,Kent,0
 10003,New Castle,15
 10005,Sussex,1
+comment,state header,--------------------------------------------------- Florida
+12001,Alachua,10
+12003,Baker,0
+12005,Bay,0
+12007,Bradford,0
+12009,Brevard,1
+12011,Broward,87
+12013,Calhoun,0
+12015,Charlotte,1
+12017,Citrus,3
+12019,Clay,4
+12021,Collier,14
+12023,Columbia,0
+12025,Dade,79
+12027,De Soto,0
+12029,Dixie,0
+12031,Duval,14
+12033,Escambia,1
+12035,Flagler,0
+12037,Franklin,0
+12039,Gadsden,1
+12041,Gilchrist,0
+12043,Glades,0
+12045,Gulf,0
+12047,Hamilton,0
+12049,Hardee,0
+12051,Hendry,0
+12053,Hernando,0
+12055,Highlands,0
+12057,Hillsborough,15
+12059,Holmes,0
+12061,Indian River,0
+12063,Jackson,0
+12065,Jefferson,0
+12067,Lafayette,0
+12069,Lake,2
+12071,Lee,12
+12073,Leon,1
+12075,Levy,0
+12077,Liberty,0
+12079,Madison,0
+12081,Manatee,8
+12083,Marion,0
+12085,Martin,0
+12087,Monroe,0
+12089,Nassau,1
+12091,Okaloosa,3
+12093,Okeechobee,0
+12095,Orange,10
+12097,Osceola,10
+12099,Palm Beach,19
+12101,Pasco,3
+12103,Pinellas,10
+12105,Polk,1
+12107,Putnam,0
+12109,St Johns,5
+12111,St Lucie,0
+12113,Santa Rosa,1
+12115,Sarasota,6
+12117,Seminole,7
+12119,Sumter,1
+12121,Suwannee,0
+12123,Taylor,0
+12125,Union,0
+12127,Volusia,9
+12129,Wakulla,0
+12131,Walton,0
+12133,Washington,0
 comment,state header,------------------------------------------------- Louisiana
 22001,Acadia,0
 22003,Allen,0
