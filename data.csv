@@ -9,6 +9,10 @@ comment,state header,----------------------------------------------- Connecticut
 9011,New London,0
 9013,Tolland,0
 9015,Windham,0
+comment,state header,-------------------------------------------------- Delaware
+10001,Kent,0
+10003,New Castle,15
+10005,Sussex,1
 comment,state header,----------------------------------------------------- Maine
 unknown,unknown,6 cases not in any county
 23001,Androscoggin,3
@@ -232,6 +236,143 @@ comment,state header,---------------------------------------------- Pennsylvania
 42129,Westmoreland,0
 42131,Wyoming,0
 42133,York,0
+comment,state header,------------------------------------------------ Virginia
+51001,Accomack,0
+51003,Albemarle,0
+51005,Alleghany,0
+51007,Amelia,0
+51009,Amherst,0
+51011,Appomattox,0
+51013,Arlington,13
+51015,Augusta,0
+51017,Bath,0
+51019,Bedford,0
+51021,Bland,0
+51023,Botetourt,0
+51025,Brunswick,0
+51027,Buchanan,0
+51029,Buckingham,0
+51031,Campbell,0
+51033,Caroline,0
+51035,Carroll,0
+51036,Charles City,0
+51037,Charlotte,0
+51041,Chesterfield,4
+51043,Clarke,0
+51045,Craig,0
+51047,Culpeper,0
+51049,Cumberland,0
+51051,Dickenson,0
+51053,Dinwiddie,0
+51057,Essex,0
+51059,Fairfax,12
+51061,Fauquier,0
+51063,Floyd,0
+51065,Fluvanna,0
+51067,Franklin,0
+51069,Frederick,0
+51071,Giles,0
+51073,Gloucester,0
+51075,Goochland,1
+51077,Grayson,0
+51079,Greene,0
+51081,Greensville,0
+51083,Halifax,0
+51085,Hanover,1
+51087,Henrico,2
+51089,Henry,0
+51091,Highland,0
+51093,Isle of Wight,0
+51095,James City,12
+51097,King and Queen,0
+51099,King George,0
+51101,King William,0
+51103,Lancaster,0
+51105,Lee,0
+51107,Loudoun,5
+51109,Louisa,0
+51111,Lunenburg,0
+51113,Madison,0
+51115,Mathews,0
+51117,Mecklenburg,0
+51119,Middlesex,0
+51121,Montgomery,0
+51125,Nelson,0
+51127,New Kent,0
+51131,Northampton,0
+51133,Northumberland,0
+51135,Nottoway,0
+51137,Orange,0
+51139,Page,0
+51141,Patrick,0
+51143,Pittsylvania,0
+51145,Powhatan,0
+51147,Prince Edward,1
+51149,Prince George,0
+51153,Prince William,4
+51155,Pulaski,0
+51157,Rappahannock,0
+51159,Richmond,0
+51161,Roanoke,0
+51163,Rockbridge,0
+51165,Rockingham,0
+51167,Russell,0
+51169,Scott,0
+51171,Shenandoah,0
+51173,Smyth,0
+51175,Southampton,0
+51177,Spotsylvania,1
+51179,Stafford,1
+51181,Surry,0
+51183,Sussex,0
+51185,Tazewell,0
+51187,Warren,0
+51191,Washington,0
+51193,Westmoreland,0
+51195,Wise,0
+51197,Wythe,0
+51199,York,1
+51510,Alexandria City,2
+51515,Bedford City,0
+51520,Bristol City,0
+51530,Buena Vista City,0
+51540,Charlottesville City,1
+51550,Chesapeake City,0
+51560,Clifton Forge City,0
+51570,Colonial Heights Cit,0
+51580,Covington City,0
+51590,Danville City,0
+51595,Emporia City,0
+51600,Fairfax City,0
+51610,Falls Church City,0
+51620,Franklin City,0
+51630,Fredericksburg City,0
+51640,Galax City,0
+51650,Hampton City,0
+51660,Harrisonburg City,1
+51670,Hopewell City,0
+51678,Lexington City,0
+51680,Lynchburg City,0
+51683,Manassas City,0
+51685,Manassas Park City,0
+51690,Martinsville City,0
+51700,Newport News City,0
+51710,Norfolk City,0
+51720,Norton City,0
+51730,Petersburg City,0
+51735,Poquoson City,0
+51740,Portsmouth City,0
+51750,Radford City,0
+51760,Richmond City,0
+51770,Roanoke City,0
+51775,Salem City,0
+51780,South Boston City,0
+51790,Staunton City,0
+51800,Suffolk City,0
+51810,Virginia Beach City,4
+51820,Waynesboro City,0
+51830,Williamsburg City,1
+51840,Winchester City,0
 comment,state header,------------------------------------------------ Washington
 53001,Adams,0
 53003,Asotin,0
