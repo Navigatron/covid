@@ -1,35 +1,35 @@
 id,name,rate
 06061,Placer,8
 comment,state header,----------------------------------------------- Connecticut
-9001,Fairfield,48
-9003,Hartford,7
-9005,Litchfield,5
-9007,Middlesex,0
-9009,New Haven,8
+9001,Fairfield,102
+9003,Hartford,18
+9005,Litchfield,7
+9007,Middlesex,3
+9009,New Haven,23
 9011,New London,0
-9013,Tolland,0
-9015,Windham,0
+9013,Tolland,4
+9015,Windham,2
 comment,state header,-------------------------------------------------- Delaware
-10001,Kent,0
-10003,New Castle,15
-10005,Sussex,1
+10001,Kent,4
+10003,New Castle,23
+10005,Sussex,3
 comment,state header,--------------------------------------------------- Florida
 12001,Alachua,10
 12003,Baker,0
 12005,Bay,0
 12007,Bradford,0
-12009,Brevard,1
-12011,Broward,87
+12009,Brevard,2
+12011,Broward,96
 12013,Calhoun,0
 12015,Charlotte,1
 12017,Citrus,3
 12019,Clay,4
-12021,Collier,14
+12021,Collier,18
 12023,Columbia,0
-12025,Dade,79
+12025,Dade,86
 12027,De Soto,0
 12029,Dixie,0
-12031,Duval,14
+12031,Duval,15
 12033,Escambia,1
 12035,Flagler,0
 12037,Franklin,0
@@ -42,14 +42,14 @@ comment,state header,--------------------------------------------------- Florida
 12051,Hendry,0
 12053,Hernando,0
 12055,Highlands,0
-12057,Hillsborough,15
+12057,Hillsborough,19
 12059,Holmes,0
 12061,Indian River,0
 12063,Jackson,0
 12065,Jefferson,0
 12067,Lafayette,0
 12069,Lake,2
-12071,Lee,12
+12071,Lee,11
 12073,Leon,1
 12075,Levy,0
 12077,Liberty,0
