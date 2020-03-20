@@ -307,23 +307,23 @@ comment,state header,------------------------------------------------- Louisiana
 22125,West Feliciana,0
 22127,Winn,0
 comment,state header,----------------------------------------------------- Maine
-unknown,unknown,6 cases not in any county
-23001,Androscoggin,3
+unknown,unknown,2 cases not in any county
+23001,Androscoggin,2
 23003,Aroostook,0
-23005,Cumberland,17
+23005,Cumberland,26
 23007,Franklin,0
 23009,Hancock,0
-23011,Kennebec,1
-23013,Knox,1
-23015,Lincoln,2
+23011,Kennebec,4
+23013,Knox,0
+23015,Lincoln,3
 23017,Oxford,1
-23019,Penobscot,0
+23019,Penobscot,2
 23021,Piscataquis,0
 23023,Sagadahoc,0
 23025,Somerset,0
 23027,Waldo,0
 23029,Washington,0
-23031,York,1
+23031,York,4
 comment,state header,-------------------------------------------------- Maryland
 24001,Allegany,0
 24003,Anne Arundel,3
