@@ -582,13 +582,13 @@ comment,state header,---------------------------------------------------- Oregon
 41033,Josephine,0
 41035,Klamath,1
 41037,Lake,0
-41039,Lane,0
+41039,Lane,2
 41041,Lincoln,0
-41043,Linn,15
+41043,Linn,18
 41045,Malheur,0
-41047,Marion,4
+41047,Marion,13
 41049,Morrow,0
-41051,Multnomah,3
+41051,Multnomah,7
 41053,Polk,1
 41055,Sherman,0
 41057,Tillamook,0
@@ -596,9 +596,9 @@ comment,state header,---------------------------------------------------- Oregon
 41061,Union,0
 41063,Wallowa,0
 41065,Wasco,0
-41067,Washington,21
+41067,Washington,25
 41069,Wheeler,0
-41071,Yamhill,1
+41071,Yamhill,2
 comment,state header,---------------------------------------------- Pennsylvania
 42001,Adams,0
 42003,Allegheny,7
