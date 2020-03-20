@@ -852,42 +852,43 @@ comment,state header,------------------------------------------------ Virginia
 51830,Williamsburg City,4
 51840,Winchester City,0
 comment,state header,------------------------------------------------ Washington
+comment,unassigned,151
 53001,Adams,0
 53003,Asotin,0
-53005,Benton,0
-53007,Chelan,0
-53009,Clallam,0
+53005,Benton,1
+53007,Chelan,2
+53009,Clallam,1
 53011,Clark,4
 53013,Columbia,1
 53015,Cowlitz,0
 53017,Douglas,0
 53019,Ferry,0
-53021,Franklin,0
+53021,Franklin,2
 53023,Garfield,0
-53025,Grant,3
+53025,Grant,8
 53027,Grays Harbor,1
-53029,Island,7
-53031,Jefferson,3
-53033,King,488
-53035,Kitsap,7
-53037,Kittitas,3
-53039,Klickitat,0
+53029,Island,17
+53031,Jefferson,4
+53033,King,693
+53035,Kitsap,12
+53037,Kittitas,4
+53039,Klickitat,2
 53041,Lewis,1
 53043,Lincoln,1
-53045,Mason,0
+53045,Mason,1
 53047,Okanogan,0
 53049,Pacific,0
 53051,Pend Oreille,0
-53053,Pierce,38
+53053,Pierce,75
 53055,San Juan,0
-53057,Skagit,7
+53057,Skagit,18
 53059,Skamania,0
-53061,Snohomish,200
-53063,Spokane,3
+53061,Snohomish,348
+53063,Spokane,9
 53065,Stevens,0
-53067,Thurston,4
+53067,Thurston,6
 53069,Wahkiakum,0
 53071,Walla Walla,0
-53073,Whatcom,3
+53073,Whatcom,7
 53075,Whitman,0
-53077,Yakima,4
+53077,Yakima,7
