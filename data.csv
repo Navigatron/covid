@@ -365,14 +365,14 @@ comment,state header,---------------------------------------------- Massachusets
 25025,Suffolk,72
 25027,Worcester,14
 comment,state header,--------------------------------------------- New Hampshire
-33001,Belknap,0
-33003,Carroll,1
+33001,Belknap,3
+33003,Carroll,4
 33005,Cheshire,0
 33007,Coos,0
-33009,Grafton,7
-33011,Hillsborough,4
-33013,Merrimack,0
-33015,Rockingham,14
+33009,Grafton,9
+33011,Hillsborough,8
+33013,Merrimack,2
+33015,Rockingham,18
 33017,Strafford,0
 33019,Sullivan,0
 comment,state header,------------------------------------------------ New Jersey
