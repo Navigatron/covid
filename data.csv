@@ -376,27 +376,27 @@ comment,state header,--------------------------------------------- New Hampshire
 33017,Strafford,0
 33019,Sullivan,0
 comment,state header,------------------------------------------------ New Jersey
-34001,Atlantic,0
-34003,Bergen,84
-34005,Burlington,5
-34007,Camden,3
-34009,Cape May,0
+34001,Atlantic,3
+34003,Bergen,195
+34005,Burlington,14
+34007,Camden,13
+34009,Cape May,1
 34011,Cumberland,0
-34013,Essex,32
-34015,Gloucester,2
-34017,Hudson,24
-34019,Hunterdon,4
-34021,Mercer,9
-34023,Middlesex,22
-34025,Monmouth,22
-34027,Morris,7
-34029,Ocean,4
-34031,Passaic,10
+34013,Essex,63
+34015,Gloucester,3
+34017,Hudson,55
+34019,Hunterdon,8
+34021,Mercer,20
+34023,Middlesex,64
+34025,Monmouth,43
+34027,Morris,26
+34029,Ocean,33
+34031,Passaic,38
 34033,Salem,0
-34035,Somerset,7
-34037,Sussex,0
-34039,Union,15
-34041,Warren,0
+34035,Somerset,21
+34037,Sussex,2
+34039,Union,29
+34041,Warren,3
 comment,state header,-------------------------------------------------- New York
 36001,Albany,23
 36003,Allegany,2
