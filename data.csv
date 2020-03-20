@@ -600,59 +600,59 @@ comment,state header,---------------------------------------------------- Oregon
 41069,Wheeler,0
 41071,Yamhill,2
 comment,state header,---------------------------------------------- Pennsylvania
-42001,Adams,0
-42003,Allegheny,7
+42001,Adams,4
+42003,Allegheny,28
 42005,Armstrong,0
-42007,Beaver,1
+42007,Beaver,3
 42009,Bedford,0
-42011,Berks,0
+42011,Berks,5
 42013,Blair,0
 42015,Bradford,0
-42017,Bucks,8
+42017,Bucks,16
 42019,Butler,0
 42021,Cambria,0
 42023,Cameron,0
 42025,Carbon,0
-42027,Centre,0
-42029,Chester,4
+42027,Centre,1
+42029,Chester,17
 42031,Clarion,0
 42033,Clearfield,0
 42035,Clinton,0
 42037,Columbia,0
 42039,Crawford,0
-42041,Cumberland,10
+42041,Cumberland,11
 42043,Dauphin,0
-42045,Delaware,9
+42045,Delaware,23
 42047,Elk,0
-42049,Erie,0
+42049,Erie,1
 42051,Fayette,0
 42053,Forest,0
-42055,Franklin,0
+42055,Franklin,1
 42057,Fulton,0
 42059,Greene,0
 42061,Huntingdon,0
 42063,Indiana,0
 42065,Jefferson,0
 42067,Juniata,0
-42069,Lackawanna,0
-42071,Lancaster,0
+42069,Lackawanna,4
+42071,Lancaster,2
 42073,Lawrence,0
-42075,Lebanon,0
-42077,Lehigh,1
-42079,Luzerne,1
+42075,Lebanon,1
+42077,Lehigh,2
+42079,Luzerne,2
 42081,Lycoming,0
 42083,McKean,0
 42085,Mercer,0
 42087,Mifflin,0
-42089,Monroe,8
-42091,Montgomery,32
+42089,Monroe,29
+42091,Montgomery,59
 42093,Montour,0
-42095,Northampton,1
+42095,Northampton,10
 42097,Northumberland,0
 42099,Perry,0
-42101,Philadelphia,10
-42103,Pike,1
-42105,Potter,0
+42101,Philadelphia,42
+42103,Pike,2
+42105,Potter,1
 42107,Schuylkill,0
 42109,Snyder,0
 42111,Somerset,0
@@ -662,11 +662,11 @@ comment,state header,---------------------------------------------- Pennsylvania
 42119,Union,0
 42121,Venango,0
 42123,Warren,0
-42125,Washington,2
+42125,Washington,3
 42127,Wayne,1
-42129,Westmoreland,0
+42129,Westmoreland,4
 42131,Wyoming,0
-42133,York,0
+42133,York,6
 comment,state header,-------------------------------------------- South Carolina
 45001,Abbeville,0
 45003,Aiken,0
@@ -715,13 +715,13 @@ comment,state header,-------------------------------------------- South Carolina
 45089,Williamsburg,0
 45091,York,1
 comment,state header,------------------------------------------------ Virginia
-51001,Accomack,0
+51001,Accomack,1
 51003,Albemarle,0
 51005,Alleghany,0
 51007,Amelia,0
 51009,Amherst,0
 51011,Appomattox,0
-51013,Arlington,13
+51013,Arlington,17
 51015,Augusta,0
 51017,Bath,0
 51019,Bedford,0
@@ -733,9 +733,9 @@ comment,state header,------------------------------------------------ Virginia
 51031,Campbell,0
 51033,Caroline,0
 51035,Carroll,0
-51036,Charles City,0
+51036,Charles City,1
 51037,Charlotte,0
-51041,Chesterfield,4
+51041,Chesterfield,5
 51043,Clarke,0
 51045,Craig,0
 51047,Culpeper,0
@@ -743,31 +743,31 @@ comment,state header,------------------------------------------------ Virginia
 51051,Dickenson,0
 51053,Dinwiddie,0
 51057,Essex,0
-51059,Fairfax,12
+51059,Fairfax,16
 51061,Fauquier,0
 51063,Floyd,0
 51065,Fluvanna,0
 51067,Franklin,0
 51069,Frederick,0
 51071,Giles,0
-51073,Gloucester,0
+51073,Gloucester,1
 51075,Goochland,1
 51077,Grayson,0
 51079,Greene,0
 51081,Greensville,0
 51083,Halifax,0
 51085,Hanover,1
-51087,Henrico,2
+51087,Henrico,3
 51089,Henry,0
 51091,Highland,0
 51093,Isle of Wight,0
-51095,James City,12
+51095,James City,19
 51097,King and Queen,0
 51099,King George,0
 51101,King William,0
 51103,Lancaster,0
 51105,Lee,0
-51107,Loudoun,5
+51107,Loudoun,9
 51109,Louisa,0
 51111,Lunenburg,0
 51113,Madison,0
@@ -787,7 +787,7 @@ comment,state header,------------------------------------------------ Virginia
 51145,Powhatan,0
 51147,Prince Edward,1
 51149,Prince George,0
-51153,Prince William,4
+51153,Prince William,12
 51155,Pulaski,0
 51157,Rappahannock,0
 51159,Richmond,0
@@ -800,7 +800,7 @@ comment,state header,------------------------------------------------ Virginia
 51173,Smyth,0
 51175,Southampton,0
 51177,Spotsylvania,1
-51179,Stafford,1
+51179,Stafford,2
 51181,Surry,0
 51183,Sussex,0
 51185,Tazewell,0
@@ -809,8 +809,8 @@ comment,state header,------------------------------------------------ Virginia
 51193,Westmoreland,0
 51195,Wise,0
 51197,Wythe,0
-51199,York,1
-51510,Alexandria City,2
+51199,York,3
+51510,Alexandria City,3
 51515,Bedford City,0
 51520,Bristol City,0
 51530,Buena Vista City,0
@@ -834,14 +834,14 @@ comment,state header,------------------------------------------------ Virginia
 51683,Manassas City,0
 51685,Manassas Park City,0
 51690,Martinsville City,0
-51700,Newport News City,0
-51710,Norfolk City,0
+51700,Newport News City,1
+51710,Norfolk City,1
 51720,Norton City,0
 51730,Petersburg City,0
 51735,Poquoson City,0
-51740,Portsmouth City,0
+51740,Portsmouth City,1
 51750,Radford City,0
-51760,Richmond City,0
+51760,Richmond City,5
 51770,Roanoke City,0
 51775,Salem City,0
 51780,South Boston City,0
@@ -849,7 +849,7 @@ comment,state header,------------------------------------------------ Virginia
 51800,Suffolk City,0
 51810,Virginia Beach City,4
 51820,Waynesboro City,0
-51830,Williamsburg City,1
+51830,Williamsburg City,4
 51840,Winchester City,0
 comment,state header,------------------------------------------------ Washington
 53001,Adams,0
