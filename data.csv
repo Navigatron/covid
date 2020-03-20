@@ -307,96 +307,96 @@ comment,state header,------------------------------------------------- Louisiana
 22125,West Feliciana,0
 22127,Winn,0
 comment,state header,----------------------------------------------------- Maine
-unknown,unknown,6 cases not in any county
-23001,Androscoggin,3
+unknown,unknown,2 cases not in any county
+23001,Androscoggin,2
 23003,Aroostook,0
-23005,Cumberland,17
+23005,Cumberland,26
 23007,Franklin,0
 23009,Hancock,0
-23011,Kennebec,1
-23013,Knox,1
-23015,Lincoln,2
+23011,Kennebec,4
+23013,Knox,0
+23015,Lincoln,3
 23017,Oxford,1
-23019,Penobscot,0
+23019,Penobscot,2
 23021,Piscataquis,0
 23023,Sagadahoc,0
 23025,Somerset,0
 23027,Waldo,0
 23029,Washington,0
-23031,York,1
+23031,York,4
 comment,state header,-------------------------------------------------- Maryland
 24001,Allegany,0
-24003,Anne Arundel,3
-24005,Baltimore,7
-24009,Calvert,0
+24003,Anne Arundel,10
+24005,Baltimore,13
+24009,Calvert,1
 24011,Caroline,0
-24013,Carroll,1
+24013,Carroll,3
 24015,Cecil,0
-24017,Charles,1
+24017,Charles,2
 24019,Dorchester,0
 24021,Frederick,1
 24023,Garrett,0
-24025,Harford,2
-24027,Howard,3
+24025,Harford,5
+24027,Howard,18
 24029,Kent,0
-24031,Montgomery,24
-24033,Prince Georges,14
+24031,Montgomery,51
+24033,Prince Georges,31
 24035,Queen Annes,0
 24037,St Marys,0
 24039,Somerset,0
 24041,Talbot,1
 24043,Washington,0
-24045,Wicomico,0
-24047,Worcester,0
-24510,Baltimore City,0
+24045,Wicomico,1
+24047,Worcester,1
+24510,Baltimore City,11
 comment,state header,---------------------------------------------- Massachusets
-25001,Barnstable,2
-25003,Berkshire,14
-25005,Bristol,5
+25001,Barnstable,5
+25003,Berkshire,18
+25005,Bristol,6
 25007,Dukes,0
-25009,Essex,8
-25011,Franklin,0
-25013,Hampden,1
-25015,Hampshire,0
-25017,Middlesex,89
+25009,Essex,19
+25011,Franklin,1
+25013,Hampden,3
+25015,Hampshire,1
+25017,Middlesex,119
 25019,Nantucket,0
-25021,Norfolk,43
+25021,Norfolk,52
 25023,Plymouth,5
-25025,Suffolk,42
-25027,Worcester,8
+25025,Suffolk,72
+25027,Worcester,14
 comment,state header,--------------------------------------------- New Hampshire
-33001,Belknap,0
-33003,Carroll,1
+33001,Belknap,3
+33003,Carroll,4
 33005,Cheshire,0
 33007,Coos,0
-33009,Grafton,7
-33011,Hillsborough,4
-33013,Merrimack,0
-33015,Rockingham,14
+33009,Grafton,9
+33011,Hillsborough,8
+33013,Merrimack,2
+33015,Rockingham,18
 33017,Strafford,0
 33019,Sullivan,0
 comment,state header,------------------------------------------------ New Jersey
-34001,Atlantic,0
-34003,Bergen,84
-34005,Burlington,5
-34007,Camden,3
-34009,Cape May,0
+34001,Atlantic,3
+34003,Bergen,195
+34005,Burlington,14
+34007,Camden,13
+34009,Cape May,1
 34011,Cumberland,0
-34013,Essex,32
-34015,Gloucester,2
-34017,Hudson,24
-34019,Hunterdon,4
-34021,Mercer,9
-34023,Middlesex,22
-34025,Monmouth,22
-34027,Morris,7
-34029,Ocean,4
-34031,Passaic,10
+34013,Essex,63
+34015,Gloucester,3
+34017,Hudson,55
+34019,Hunterdon,8
+34021,Mercer,20
+34023,Middlesex,64
+34025,Monmouth,43
+34027,Morris,26
+34029,Ocean,33
+34031,Passaic,38
 34033,Salem,0
-34035,Somerset,7
-34037,Sussex,0
-34039,Union,15
-34041,Warren,0
+34035,Somerset,21
+34037,Sussex,2
+34039,Union,29
+34041,Warren,3
 comment,state header,-------------------------------------------------- New York
 36001,Albany,23
 36003,Allegany,2
@@ -471,77 +471,77 @@ comment,state header,-------------------------------------------- North Carolina
 37013,Beaufort,0
 37015,Bertie,0
 37017,Bladen,0
-37019,Brunswick,1
+37019,Brunswick,2
 37021,Buncombe,0
 37023,Burke,0
-37025,Cabarrus,1
+37025,Cabarrus,2
 37027,Caldwell,0
 37029,Camden,0
 37031,Carteret,0
 37033,Caswell,0
 37035,Catawba,0
-37037,Chatham,1
+37037,Chatham,3
 37039,Cherokee,0
 37041,Chowan,0
 37043,Clay,0
 37045,Cleveland,0
 37047,Columbus,0
-37049,Craven,1
+37049,Craven,2
 37051,Cumberland,0
 37053,Currituck,0
 37055,Dare,0
-37057,Davidson,0
+37057,Davidson,1
 37059,Davie,0
 37061,Duplin,0
-37063,Durham,1
+37063,Durham,33
 37065,Edgecombe,0
-37067,Forsyth,2
+37067,Forsyth,7
 37069,Franklin,0
-37071,Gaston,0
+37071,Gaston,1
 37073,Gates,0
 37075,Graham,0
 37077,Granville,0
 37079,Greene,0
-37081,Guilford,0
+37081,Guilford,4
 37083,Halifax,0
-37085,Harnett,3
+37085,Harnett,6
 37087,Haywood,0
 37089,Henderson,0
 37091,Hertford,0
-37093,Hoke,0
+37093,Hoke,1
 37095,Hyde,0
-37097,Iredell,1
+37097,Iredell,2
 37099,Jackson,0
 37101,Johnston,2
 37103,Jones,0
 37105,Lee,0
 37107,Lenoir,0
-37109,Lincoln,0
+37109,Lincoln,1
 37111,McDowell,0
 37113,Macon,0
 37115,Madison,0
 37117,Martin,0
-37119,Mecklenburg,7
+37119,Mecklenburg,28
 37121,Mitchell,0
 37123,Montgomery,0
-37125,Moore,0
+37125,Moore,2
 37127,Nash,0
-37129,New Hanover,0
+37129,New Hanover,1
 37131,Northampton,0
 37133,Onslow,1
 37135,Orange,0
 37137,Pamlico,0
-37139,Pasquotank,0
+37139,Pasquotank,1
 37141,Pender,0
 37143,Perquimans,0
 37145,Person,0
-37147,Pitt,0
+37147,Pitt,1
 37149,Polk,0
 37151,Randolph,0
 37153,Richmond,0
 37155,Robeson,0
 37157,Rockingham,0
-37159,Rowan,0
+37159,Rowan,1
 37161,Rutherford,0
 37163,Sampson,1
 37165,Scotland,0
@@ -551,15 +551,15 @@ comment,state header,-------------------------------------------- North Carolina
 37173,Swain,0
 37175,Transylvania,0
 37177,Tyrrell,0
-37179,Union,0
+37179,Union,2
 37181,Vance,0
-37183,Wake,15
+37183,Wake,23
 37185,Warren,0
 37187,Washington,0
-37189,Watauga,1
+37189,Watauga,2
 37191,Wayne,1
 37193,Wilkes,0
-37195,Wilson,1
+37195,Wilson,2
 37197,Yadkin,0
 37199,Yancey,0
 comment,state header,---------------------------------------------------- Oregon
@@ -582,13 +582,13 @@ comment,state header,---------------------------------------------------- Oregon
 41033,Josephine,0
 41035,Klamath,1
 41037,Lake,0
-41039,Lane,0
+41039,Lane,2
 41041,Lincoln,0
-41043,Linn,15
+41043,Linn,18
 41045,Malheur,0
-41047,Marion,4
+41047,Marion,13
 41049,Morrow,0
-41051,Multnomah,3
+41051,Multnomah,7
 41053,Polk,1
 41055,Sherman,0
 41057,Tillamook,0
@@ -596,63 +596,63 @@ comment,state header,---------------------------------------------------- Oregon
 41061,Union,0
 41063,Wallowa,0
 41065,Wasco,0
-41067,Washington,21
+41067,Washington,25
 41069,Wheeler,0
-41071,Yamhill,1
+41071,Yamhill,2
 comment,state header,---------------------------------------------- Pennsylvania
-42001,Adams,0
-42003,Allegheny,7
+42001,Adams,4
+42003,Allegheny,28
 42005,Armstrong,0
-42007,Beaver,1
+42007,Beaver,3
 42009,Bedford,0
-42011,Berks,0
+42011,Berks,5
 42013,Blair,0
 42015,Bradford,0
-42017,Bucks,8
+42017,Bucks,16
 42019,Butler,0
 42021,Cambria,0
 42023,Cameron,0
 42025,Carbon,0
-42027,Centre,0
-42029,Chester,4
+42027,Centre,1
+42029,Chester,17
 42031,Clarion,0
 42033,Clearfield,0
 42035,Clinton,0
 42037,Columbia,0
 42039,Crawford,0
-42041,Cumberland,10
+42041,Cumberland,11
 42043,Dauphin,0
-42045,Delaware,9
+42045,Delaware,23
 42047,Elk,0
-42049,Erie,0
+42049,Erie,1
 42051,Fayette,0
 42053,Forest,0
-42055,Franklin,0
+42055,Franklin,1
 42057,Fulton,0
 42059,Greene,0
 42061,Huntingdon,0
 42063,Indiana,0
 42065,Jefferson,0
 42067,Juniata,0
-42069,Lackawanna,0
-42071,Lancaster,0
+42069,Lackawanna,4
+42071,Lancaster,2
 42073,Lawrence,0
-42075,Lebanon,0
-42077,Lehigh,1
-42079,Luzerne,1
+42075,Lebanon,1
+42077,Lehigh,2
+42079,Luzerne,2
 42081,Lycoming,0
 42083,McKean,0
 42085,Mercer,0
 42087,Mifflin,0
-42089,Monroe,8
-42091,Montgomery,32
+42089,Monroe,29
+42091,Montgomery,59
 42093,Montour,0
-42095,Northampton,1
+42095,Northampton,10
 42097,Northumberland,0
 42099,Perry,0
-42101,Philadelphia,10
-42103,Pike,1
-42105,Potter,0
+42101,Philadelphia,42
+42103,Pike,2
+42105,Potter,1
 42107,Schuylkill,0
 42109,Snyder,0
 42111,Somerset,0
@@ -662,11 +662,11 @@ comment,state header,---------------------------------------------- Pennsylvania
 42119,Union,0
 42121,Venango,0
 42123,Warren,0
-42125,Washington,2
+42125,Washington,3
 42127,Wayne,1
-42129,Westmoreland,0
+42129,Westmoreland,4
 42131,Wyoming,0
-42133,York,0
+42133,York,6
 comment,state header,-------------------------------------------- South Carolina
 45001,Abbeville,0
 45003,Aiken,0
@@ -714,14 +714,270 @@ comment,state header,-------------------------------------------- South Carolina
 45087,Union,0
 45089,Williamsburg,0
 45091,York,1
+comment,state header,----------------------------------------------------- Texas
+48001,Anderson,0
+48003,Andrews,0
+48005,Angelina,0
+48007,Aransas,0
+48009,Archer,0
+48011,Armstrong,0
+48013,Atascosa,0
+48015,Austin,0
+48017,Bailey,0
+48019,Bandera,0
+48021,Bastrop,0
+48023,Baylor,0
+48025,Bee,0
+48027,Bell,2
+48029,Bexar,12
+48031,Blanco,0
+48033,Borden,0
+48035,Bosque,0
+48037,Bowie,1
+48039,Brazoria,3
+48041,Brazos,2
+48043,Brewster,0
+48045,Briscoe,0
+48047,Brooks,0
+48049,Brown,0
+48051,Burleson,0
+48053,Burnet,0
+48055,Caldwell,0
+48057,Calhoun,0
+48059,Callahan,0
+48061,Cameron,1
+48063,Camp,0
+48065,Carson,0
+48067,Cass,0
+48069,Castro,0
+48071,Chambers,0
+48073,Cherokee,0
+48075,Childress,0
+48077,Clay,0
+48079,Cochran,0
+48081,Coke,0
+48083,Coleman,0
+48085,Collin,12
+48087,Collingsworth,0
+48089,Colorado,0
+48091,Comal,0
+48093,Comanche,0
+48095,Concho,0
+48097,Cooke,0
+48099,Coryell,0
+48101,Cottle,0
+48103,Crane,1
+48105,Crockett,0
+48107,Crosby,0
+48109,Culberson,0
+48111,Dallam,0
+48113,Dallas,22
+48115,Dawson,0
+48117,Deaf Smith,0
+48119,Delta,0
+48121,Denton,6
+48123,De Witt,1
+48125,Dickens,0
+48127,Dimmit,0
+48129,Donley,0
+48131,Duval,0
+48133,Eastland,0
+48135,Ector,0
+48137,Edwards,0
+48139,Ellis,2
+48141,El Paso,3
+48143,Erath,0
+48145,Falls,0
+48147,Fannin,1
+48149,Fayette,0
+48151,Fisher,0
+48153,Floyd,0
+48155,Foard,0
+48157,Fort Bend,11
+48159,Franklin,0
+48161,Freestone,0
+48163,Frio,0
+48165,Gaines,0
+48167,Galveston,4
+48169,Garza,0
+48171,Gillespie,0
+48173,Glasscock,0
+48175,Goliad,0
+48177,Gonzales,0
+48179,Gray,0
+48181,Grayson,0
+48183,Gregg,1
+48185,Grimes,0
+48187,Guadalupe,0
+48189,Hale,0
+48191,Hall,0
+48193,Hamilton,0
+48195,Hansford,0
+48197,Hardeman,0
+48199,Hardin,0
+48201,Harris,24
+48203,Harrison,0
+48205,Hartley,0
+48207,Haskell,0
+48209,Hays,4
+48211,Hemphill,0
+48213,Henderson,0
+48215,Hidalgo,0
+48217,Hill,0
+48219,Hockley,1
+48221,Hood,0
+48223,Hopkins,0
+48225,Houston,0
+48227,Howard,0
+48229,Hudspeth,0
+48231,Hunt,0
+48233,Hutchinson,0
+48235,Irion,0
+48237,Jack,0
+48239,Jackson,0
+48241,Jasper,0
+48243,Jeff Davis,0
+48245,Jefferson,0
+48247,Jim Hogg,0
+48249,Jim Wells,0
+48251,Johnson,2
+48253,Jones,0
+48255,Karnes,0
+48257,Kaufman,0
+48259,Kendall,0
+48261,Kenedy,0
+48263,Kent,0
+48265,Kerr,0
+48267,Kimble,0
+48269,King,0
+48271,Kinney,0
+48273,Kleberg,0
+48275,Knox,0
+48277,Lamar,0
+48279,Lamb,0
+48281,Lampasas,0
+48283,La Salle,0
+48285,Lavaca,1
+48287,Lee,0
+48289,Leon,0
+48291,Liberty,0
+48293,Limestone,0
+48295,Lipscomb,0
+48297,Live Oak,0
+48299,Llano,0
+48301,Loving,0
+48303,Lubbock,1
+48305,Lynn,0
+48307,McCulloch,0
+48309,McLennan,0
+48311,McMullen,0
+48313,Madison,0
+48315,Marion,0
+48317,Martin,0
+48319,Mason,0
+48321,Matagorda,3
+48323,Maverick,0
+comment,McLennan,7 - where does this go?
+48325,Medina,1
+48327,Menard,0
+48329,Midland,0
+48331,Milam,0
+48333,Mills,0
+48335,Mitchell,0
+48337,Montague,0
+48339,Montgomery,4
+48341,Moore,0
+48343,Morris,0
+48345,Motley,0
+48347,Nacogdoches,0
+48349,Navarro,0
+48351,Newton,0
+48353,Nolan,0
+48355,Nueces,0
+48357,Ochiltree,0
+48359,Oldham,0
+48361,Orange,0
+48363,Palo Pinto,0
+48365,Panola,0
+48367,Parker,0
+48369,Parmer,0
+48371,Pecos,0
+48373,Polk,0
+48375,Potter,0
+48377,Presidio,0
+48379,Rains,0
+48381,Randall,0
+48383,Reagan,0
+48385,Real,0
+48387,Red River,0
+48389,Reeves,0
+48391,Refugio,0
+48393,Roberts,0
+48395,Robertson,0
+48397,Rockwall,0
+48399,Runnels,0
+48401,Rusk,1
+48403,Sabine,0
+48405,San Augustine,0
+48407,San Jacinto,0
+48409,San Patricio,0
+48411,San Saba,0
+48413,Schleicher,0
+48415,Scurry,0
+48417,Shackelford,0
+48419,Shelby,0
+48421,Sherman,0
+48423,Smith,5
+48425,Somervell,0
+48427,Starr,0
+48429,Stephens,0
+48431,Sterling,0
+48433,Stonewall,0
+48435,Sutton,0
+48437,Swisher,0
+48439,Tarrant,5
+48441,Taylor,0
+48443,Terrell,0
+48445,Terry,0
+48447,Throckmorton,0
+48449,Titus,0
+48451,Tom Green,0
+48453,Travis,21
+48455,Trinity,0
+48457,Tyler,0
+48459,Upshur,0
+48461,Upton,0
+48463,Uvalde,0
+48465,Val Verde,0
+48467,Van Zandt,0
+48469,Victoria,0
+48471,Walker,0
+48473,Waller,0
+48475,Ward,0
+48477,Washington,0
+48479,Webb,1
+48481,Wharton,0
+48483,Wheeler,0
+48485,Wichita,1
+48487,Wilbarger,0
+48489,Willacy,0
+48491,Williamson,8
+48493,Wilson,0
+48495,Winkler,0
+48497,Wise,0
+48499,Wood,0
+48501,Yoakum,0
+48503,Young,0
+48505,Zapata,0
+48507,Zavala,0
 comment,state header,------------------------------------------------ Virginia
-51001,Accomack,0
+51001,Accomack,1
 51003,Albemarle,0
 51005,Alleghany,0
 51007,Amelia,0
 51009,Amherst,0
 51011,Appomattox,0
-51013,Arlington,13
+51013,Arlington,17
 51015,Augusta,0
 51017,Bath,0
 51019,Bedford,0
@@ -733,9 +989,9 @@ comment,state header,------------------------------------------------ Virginia
 51031,Campbell,0
 51033,Caroline,0
 51035,Carroll,0
-51036,Charles City,0
+51036,Charles City,1
 51037,Charlotte,0
-51041,Chesterfield,4
+51041,Chesterfield,5
 51043,Clarke,0
 51045,Craig,0
 51047,Culpeper,0
@@ -743,31 +999,31 @@ comment,state header,------------------------------------------------ Virginia
 51051,Dickenson,0
 51053,Dinwiddie,0
 51057,Essex,0
-51059,Fairfax,12
+51059,Fairfax,16
 51061,Fauquier,0
 51063,Floyd,0
 51065,Fluvanna,0
 51067,Franklin,0
 51069,Frederick,0
 51071,Giles,0
-51073,Gloucester,0
+51073,Gloucester,1
 51075,Goochland,1
 51077,Grayson,0
 51079,Greene,0
 51081,Greensville,0
 51083,Halifax,0
 51085,Hanover,1
-51087,Henrico,2
+51087,Henrico,3
 51089,Henry,0
 51091,Highland,0
 51093,Isle of Wight,0
-51095,James City,12
+51095,James City,19
 51097,King and Queen,0
 51099,King George,0
 51101,King William,0
 51103,Lancaster,0
 51105,Lee,0
-51107,Loudoun,5
+51107,Loudoun,9
 51109,Louisa,0
 51111,Lunenburg,0
 51113,Madison,0
@@ -787,7 +1043,7 @@ comment,state header,------------------------------------------------ Virginia
 51145,Powhatan,0
 51147,Prince Edward,1
 51149,Prince George,0
-51153,Prince William,4
+51153,Prince William,12
 51155,Pulaski,0
 51157,Rappahannock,0
 51159,Richmond,0
@@ -800,7 +1056,7 @@ comment,state header,------------------------------------------------ Virginia
 51173,Smyth,0
 51175,Southampton,0
 51177,Spotsylvania,1
-51179,Stafford,1
+51179,Stafford,2
 51181,Surry,0
 51183,Sussex,0
 51185,Tazewell,0
@@ -809,8 +1065,8 @@ comment,state header,------------------------------------------------ Virginia
 51193,Westmoreland,0
 51195,Wise,0
 51197,Wythe,0
-51199,York,1
-51510,Alexandria City,2
+51199,York,3
+51510,Alexandria City,3
 51515,Bedford City,0
 51520,Bristol City,0
 51530,Buena Vista City,0
@@ -834,14 +1090,14 @@ comment,state header,------------------------------------------------ Virginia
 51683,Manassas City,0
 51685,Manassas Park City,0
 51690,Martinsville City,0
-51700,Newport News City,0
-51710,Norfolk City,0
+51700,Newport News City,1
+51710,Norfolk City,1
 51720,Norton City,0
 51730,Petersburg City,0
 51735,Poquoson City,0
-51740,Portsmouth City,0
+51740,Portsmouth City,1
 51750,Radford City,0
-51760,Richmond City,0
+51760,Richmond City,5
 51770,Roanoke City,0
 51775,Salem City,0
 51780,South Boston City,0
@@ -849,45 +1105,46 @@ comment,state header,------------------------------------------------ Virginia
 51800,Suffolk City,0
 51810,Virginia Beach City,4
 51820,Waynesboro City,0
-51830,Williamsburg City,1
+51830,Williamsburg City,4
 51840,Winchester City,0
 comment,state header,------------------------------------------------ Washington
+comment,unassigned,151
 53001,Adams,0
 53003,Asotin,0
-53005,Benton,0
-53007,Chelan,0
-53009,Clallam,0
+53005,Benton,1
+53007,Chelan,2
+53009,Clallam,1
 53011,Clark,4
 53013,Columbia,1
 53015,Cowlitz,0
 53017,Douglas,0
 53019,Ferry,0
-53021,Franklin,0
+53021,Franklin,2
 53023,Garfield,0
-53025,Grant,3
+53025,Grant,8
 53027,Grays Harbor,1
-53029,Island,7
-53031,Jefferson,3
-53033,King,488
-53035,Kitsap,7
-53037,Kittitas,3
-53039,Klickitat,0
+53029,Island,17
+53031,Jefferson,4
+53033,King,693
+53035,Kitsap,12
+53037,Kittitas,4
+53039,Klickitat,2
 53041,Lewis,1
 53043,Lincoln,1
-53045,Mason,0
+53045,Mason,1
 53047,Okanogan,0
 53049,Pacific,0
 53051,Pend Oreille,0
-53053,Pierce,38
+53053,Pierce,75
 53055,San Juan,0
-53057,Skagit,7
+53057,Skagit,18
 53059,Skamania,0
-53061,Snohomish,200
-53063,Spokane,3
+53061,Snohomish,348
+53063,Spokane,9
 53065,Stevens,0
-53067,Thurston,4
+53067,Thurston,6
 53069,Wahkiakum,0
 53071,Walla Walla,0
-53073,Whatcom,3
+53073,Whatcom,7
 53075,Whitman,0
-53077,Yakima,4
+53077,Yakima,7
