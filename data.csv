@@ -244,65 +244,65 @@ comment,state header,--------------------------------------------------- Georgia
 comment,state header,------------------------------------------------- Louisiana
 22001,Acadia,0
 22003,Allen,0
-22005,Ascension,1
-22007,Assumption,0
+22005,Ascension,2
+22007,Assumption,1
 22009,Avoyelles,0
 22011,Beauregard,0
 22013,Bienville,0
-22015,Bossier,1
-22017,Caddo,5
-22019,Calcasieu,0
+22015,Bossier,4
+22017,Caddo,13
+22019,Calcasieu,3
 22021,Caldwell,0
 22023,Cameron,0
 22025,Catahoula,0
 22027,Claiborne,0
 22029,Concordia,0
 22031,De Soto,0
-22033,East Baton Rouge,1
+22033,East Baton Rouge,7
 22035,East Carroll,0
 22037,East Feliciana,0
 22039,Evangeline,0
 22041,Franklin,0
 22043,Grant,0
-22045,Iberia,0
-22047,Iberville,0
+22045,Iberia,1
+22047,Iberville,1
 22049,Jackson,0
-22051,Jefferson,37
+22051,Jefferson,90
 22053,Jefferson Davis,0
-22055,Lafayette,0
-22057,Lafourche,3
+22055,Lafayette,7
+22057,Lafourche,5
 22059,La Salle,0
 22061,Lincoln,0
-22063,Livingston,0
+22063,Livingston,1
 22065,Madison,0
 22067,Morehouse,0
 22069,Natchitoches,0
-22071,Orleans,176
+22071,Orleans,299
 22073,Ouachita,0
-22075,Plaquemines,0
+22075,Plaquemines,1
 22077,Pointe Coupee,0
-22079,Rapides,0
+22079,Rapides,1
 22081,Red River,0
 22083,Richland,0
 22085,Sabine,0
-22087,St Bernard,2
-22089,St Charles,3
+22087,St Bernard,5
+22089,St Charles,5
 22091,St Helena,0
-22093,St James,0
-22095,St John the Baptist,1
-22097,St Landry,0
+22093,St James,1
+22095,St John the Baptist,4
+22097,St Landry,2
 22099,St Martin,0
 22101,St Mary,0
-22103,St Tammany,6
+22103,St Tammany,10
 22105,Tangipahoa,0
 22107,Tensas,0
-22109,Terrebonne,3
+22109,Terrebonne,5
 22111,Union,0
 22113,Vermilion,0
 22115,Vernon,0
-22117,Washington,1
-22119,Webster,0
-22121,West Baton Rouge,0
+22117,Washington,2
+22119,Webster,1
+22121,West Baton Rouge,2
 22123,West Carroll,0
 22125,West Feliciana,0
 22127,Winn,0
