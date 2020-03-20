@@ -350,20 +350,20 @@ comment,state header,-------------------------------------------------- Maryland
 24047,Worcester,1
 24510,Baltimore City,11
 comment,state header,---------------------------------------------- Massachusets
-25001,Barnstable,2
-25003,Berkshire,14
-25005,Bristol,5
+25001,Barnstable,5
+25003,Berkshire,18
+25005,Bristol,6
 25007,Dukes,0
-25009,Essex,8
-25011,Franklin,0
-25013,Hampden,1
-25015,Hampshire,0
-25017,Middlesex,89
+25009,Essex,19
+25011,Franklin,1
+25013,Hampden,3
+25015,Hampshire,1
+25017,Middlesex,119
 25019,Nantucket,0
-25021,Norfolk,43
+25021,Norfolk,52
 25023,Plymouth,5
-25025,Suffolk,42
-25027,Worcester,8
+25025,Suffolk,72
+25027,Worcester,14
 comment,state header,--------------------------------------------- New Hampshire
 33001,Belknap,0
 33003,Carroll,1
