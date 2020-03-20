@@ -1,0 +1,297 @@
+[
+    {
+        "name": "Alabama",
+        "abbreviation": "AL",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Alaska",
+        "abbreviation": "AK",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "American Samoa",
+        "abbreviation": "AS",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Arizona",
+        "abbreviation": "AZ",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Arkansas",
+        "abbreviation": "AR",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "California",
+        "abbreviation": "CA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Colorado",
+        "abbreviation": "CO",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Connecticut",
+        "abbreviation": "CT",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Delaware",
+        "abbreviation": "DE",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "District Of Columbia",
+        "abbreviation": "DC",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Federated States Of Micronesia",
+        "abbreviation": "FM",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Florida",
+        "abbreviation": "FL",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Georgia",
+        "abbreviation": "GA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Guam",
+        "abbreviation": "GU",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Hawaii",
+        "abbreviation": "HI",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Idaho",
+        "abbreviation": "ID",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Illinois",
+        "abbreviation": "IL",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Indiana",
+        "abbreviation": "IN",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Iowa",
+        "abbreviation": "IA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Kansas",
+        "abbreviation": "KS",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Kentucky",
+        "abbreviation": "KY",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Louisiana",
+        "abbreviation": "LA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Maine",
+        "abbreviation": "ME",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Marshall Islands",
+        "abbreviation": "MH",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Maryland",
+        "abbreviation": "MD",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Massachusetts",
+        "abbreviation": "MA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Michigan",
+        "abbreviation": "MI",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Minnesota",
+        "abbreviation": "MN",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Mississippi",
+        "abbreviation": "MS",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Missouri",
+        "abbreviation": "MO",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Montana",
+        "abbreviation": "MT",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Nebraska",
+        "abbreviation": "NE",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Nevada",
+        "abbreviation": "NV",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "New Hampshire",
+        "abbreviation": "NH",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "New Jersey",
+        "abbreviation": "NJ",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "New Mexico",
+        "abbreviation": "NM",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "New York",
+        "abbreviation": "NY",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "North Carolina",
+        "abbreviation": "NC",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "North Dakota",
+        "abbreviation": "ND",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Northern Mariana Islands",
+        "abbreviation": "MP",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Ohio",
+        "abbreviation": "OH",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Oklahoma",
+        "abbreviation": "OK",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Oregon",
+        "abbreviation": "OR",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Palau",
+        "abbreviation": "PW",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Pennsylvania",
+        "abbreviation": "PA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Puerto Rico",
+        "abbreviation": "PR",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Rhode Island",
+        "abbreviation": "RI",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "South Carolina",
+        "abbreviation": "SC",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "South Dakota",
+        "abbreviation": "SD",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Tennessee",
+        "abbreviation": "TN",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Texas",
+        "abbreviation": "TX",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Utah",
+        "abbreviation": "UT",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Vermont",
+        "abbreviation": "VT",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Virgin Islands",
+        "abbreviation": "VI",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Virginia",
+        "abbreviation": "VA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Washington",
+        "abbreviation": "WA",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "West Virginia",
+        "abbreviation": "WV",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Wisconsin",
+        "abbreviation": "WI",
+        "Source": "https://somesource.com"
+    },
+    {
+        "name": "Wyoming",
+        "abbreviation": "WY",
+        "Source": "https://somesource.com"
+    }
+]
