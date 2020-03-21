@@ -1,5 +1,69 @@
 id,name,rate
 06061,Placer,8
+comment,state header,-------------------------------------------------- Colorado
+8001,Adams,12
+8003,Alamosa,0
+8005,Arapahoe,29
+8007,Archuleta,0
+8009,Baca,0
+8011,Bent,0
+8013,Boulder,16
+8015,Chaffee,0
+8017,Cheyenne,0
+8019,Clear Creek,2
+8021,Conejos,0
+8023,Costilla,0
+8025,Crowley,1
+8027,Custer,0
+8029,Delta,0
+8031,Denver,67
+8033,Dolores,0
+8035,Douglas,17
+8037,Eagle,61
+8039,Elbert,0
+8041,El Paso,27
+8043,Fremont,0
+8045,Garfield,4
+8047,Gilpin,0
+8049,Grand,3
+8051,Gunnison,13
+8053,Hinsdale,0
+8055,Huerfano,0
+8057,Jackson,0
+8059,Jefferson,27
+8061,Kiowa,0
+8063,Kit Carson,0
+8065,Lake,0
+8067,La Plata,0
+8069,Larimer,7
+8071,Las Animas,0
+8073,Lincoln,0
+8075,Logan,0
+8077,Mesa,1
+8079,Mineral,0
+8081,Moffat,0
+8083,Montezuma,0
+8085,Montrose,0
+8087,Morgan,2
+8089,Otero,0
+8091,Ouray,0
+8093,Park,1
+8095,Phillips,0
+8097,Pitkin,14
+8099,Prowers,0
+8101,Pueblo,2
+8103,Rio Blanco,0
+8105,Rio Grande,0
+8107,Routt,2
+8109,Saguache,0
+8111,San Juan,0
+8113,San Miguel,0
+8115,Sedgwick,0
+8117,Summit,7
+8119,Teller,0
+8121,Washington,0
+8123,Weld,15
+8125,Yuma,1
 comment,state header,----------------------------------------------- Connecticut
 9001,Fairfield,102
 9003,Hartford,18
