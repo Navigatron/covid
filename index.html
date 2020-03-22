@@ -215,18 +215,14 @@
 		</tr>
 		<tr>
 			<td>New Jersey</td>
-			<td>--03-20 2PM</td>
-			<td>--03-19 noon</td>
+			<td>--03-22 noon</td>
+			<td>--03-21 1PM</td>
 			<td> <a href="https://www.nj.gov/health/cd/topics/covid2019_dashboard.shtml">www.nj.gov/health</a> </td>
 		</tr>
 		<tr>
 			<td>New York</td>
-			<td>--03-20 2PM</td>
-			<td>
-				<span style='color: red;'>
-				--03-17 1PM
-				</span>
-			</td>
+			<td>--03-22 11AM</td>
+			<td>--03-21 4PM</td>
 			<td> <a href="https://coronavirus.health.ny.gov/county-county-breakdown-positive-cases">coronavirus.health.ny.gov</a> </td>
 		</tr>
 		<tr>
@@ -280,9 +276,9 @@
 <script type="text/javascript">
 	// Variables
 	var width = 960, height = 600;
-	var color_domain = [1,2,11,101, 1001]; // This is post the +1 to account for log scale
-	var ext_color_domain = [0,1,2,5,10,20,50,100,200,500, 1000]
-	var legend_labels = ["0","1","2","5","10","20","50","100","200","500","1000"]
+	var color_domain = [1,2,11,101, 1001, 10001]; // This is post the +1 to account for log scale
+	var ext_color_domain = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000]
+	var legend_labels = ["0","1","2","5","10","20","50","100","200","500","1000","2000","5000","10000"]
 
 	// Color? Yessss this is fun to play with
 	//var color = d3.scale.threshold()
@@ -295,7 +291,8 @@
 			"#FFFF00", //    1 = yellow
 			"#FF0000", //   10 = red
 			"#ff00ff", //  100 = purple
-			"#0000FF"  // 1000 = blue
+			"#0000FF",  // 1000 = blue
+			"#00FFFF"  // 10000 = cyan
 			]);
 
 	// Creates the tooltop, transparent.
@@ -303,7 +300,7 @@
 		.attr("class", "tooltip")
 		.style("opacity", 0);
 
-	// Create the svg
+	// Create the svg, set some attributes
 	var svg = d3.select("#map").append("svg")
 		.attr("width", width)
 		//.attr("max-width", "100%")
@@ -354,37 +351,46 @@
 			// IDs are given a *name* variable
 		});
 
-		// Create the SVG
+		// Append a 'g' element to the svg (a group!)
 		svg.append("g")
-			.attr("class", "county") // svg.class = county
-			.selectAll("path")
-			.data(topojson.feature(us, us.objects.counties).features) // put in counties
-			.enter().append("path")
-			.attr("d", path)
+			.attr("class", "county") // This 'g' element now has a class equal to county
+			.selectAll("path") // select all the paths in the g, that's what we're working with now
+			.data(topojson.feature(us, us.objects.counties).features) // Puts the counties data into the path(s)
+			.enter().append("path") // put another path inside the path with the counties?
+			.attr("d", path) // set the d attribute to equal... some d3 object?
 			.style ( "fill" , function (d) {
 				return color (pairRateWithId[d.id]+1); // convert the ID's rate to a color. Color is a function that takes a number and returns a color
 				// Plus 1 is in there to counter the log limitation of all values positive
 			})
+			.style({'opacity': 1, 'stroke': 'black', 'stroke-width': 0.1})
 			//.style("opacity", 0.8) // commented to make more dark
-			// .on("mouseover", function(d) { // This creates the hover dialog // commented to make faster
-			// 	var sel = d3.select(this);
-			// 	sel.moveToFront();
-			// 	d3.select(this).transition().duration(300).style({'opacity': 1, 'stroke': 'black', 'stroke-width': 1.5});
-			// 	div.transition().duration(300)
-			// 	.style("opacity", 1)
-			// 	div.text(d.id + ": " + pairNameWithId[d.id] + ": " + pairRateWithId[d.id])
-			// 	.style("left", (d3.event.pageX) + "px")
-			// 	.style("top", (d3.event.pageY -30) + "px");
-			// })
-			// .on("mouseout", function() { // Remove the hover dialog
-			// 	var sel = d3.select(this);
-			// 	sel.moveToBack();
-			// 	d3.select(this)
-			// 	.transition().duration(300)
-			// 	.style({'opacity': 0.8, 'stroke': 'white', 'stroke-width': 1});
-			// 	div.transition().duration(300)
-			// 	.style("opacity", 0);
-			// })
+			.on("mouseover", function(d) { // This creates the hover dialog // commented to make faster
+				var sel = d3.select(this);
+				sel.moveToFront();
+
+				d3.select(this).transition().duration(300).style({'opacity': 1, 'stroke': 'cyan', 'stroke-width': 1});
+
+				div.transition().duration(300)
+				.style("opacity", 1);
+
+				// show the tooltip
+				div.text(d.id + ": " + pairNameWithId[d.id] + ": " + pairRateWithId[d.id])
+				.style("left", (d3.event.pageX+10) + "px")
+				.style("top", (d3.event.pageY -30) + "px");
+			})
+			.on("mouseout", function() { // Remove the hover dialog
+				// move 'this' to the back
+				var sel = d3.select(this);
+				sel.moveToBack();
+				// Fade the county back in/out?
+				d3.select(this)
+				.transition().duration(300)
+				.style({'opacity': 1, 'stroke': 'black', 'stroke-width': 0.1});
+
+				// Make the tooltip transparent
+				div.transition().duration(300)
+				.style("opacity", 0);
+			})
 
 	};
 
