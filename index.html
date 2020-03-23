@@ -3,107 +3,59 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="A by-county map of Covid-19 in the US. No silly circles.">
-	<title>Covid-19 by county</title>
+	<meta name="description" content="Covid-19 case counts by county. No silly circles.">
+	<link rel="canonical" href="https://covidbycounty.com">
+
+	<meta property="og:url"           content="https://covidbycounty.com" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Covid-19 by County" />
+	<meta property="og:description"   content="Covid-19 case counts by county" />
+	<meta property="og:image"         content="https://covidbycounty.com/preview.png" />
+	<meta name="twitter:card" content="summary_large_image">
+
+	<title>Covid-19 by County</title>
 	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/queue.v1.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
+	<link rel="stylesheet" href="./index.css">
 </head>
-
-<!-- CSS -->
-<style>
-
-	/* Map CSS */
-	path {
-	 	/* stroke:white;
-	 	stroke-width: 1px; */
-	}
-
-	body {
-	 	font-family: sans-serif;
-	}
-
-	.county {
-	 	font: 14px sans-serif;
-	 	font-weight: bold;
-	}
-
-	.legend {
-	 	font-size: 14px;
-	 	font-family: 'Proxima Nova', sans-serif;
-	}
-
-	.legend_title {
-	 	font-size: 14px;
-	 	font-family: 'Proxima Nova', sans-serif;
-	 	font-weight: bold;
-	}
-
-	div.tooltip {
-	 	position: absolute;
-	 	left: 75px;
-	 	text-align: center;
-	 	height: 16px;
-	 	padding: 10px;
-	 	font-size: 14px;
-	 	background: #FFFFFF;
-	 	border: 1px solid #989898;
- 		pointer-events: none;
-	}
-
-	@media (max-width: 400px) {
-	    .d3map {
-	        display: none;
-	    }
-	}
-
-	/* Page CSS */
-
-	body{
-		margin: 0;
-	}
-	header{
-		padding: 0 1rem;
-		margin-bottom: 1rem;
-		overflow: auto;
-		/* box-shadow: 0px 0px 6px 0px #999; */
-	}
-	header h1{
-		text-align: center;
-	}
-	.map{
-		margin: 1rem 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.map #map{
-
-	}
-	main{
-		max-width: 600px;
-		margin: 1rem auto;
-		padding: 0 1rem;
-	}
-	footer{
-		max-width: 500;
-		margin: 1rem auto;
-		padding: 0 1rem;
-		text-align: center;
-		font-size: 0.8rem;
-	}
-</style>
-
 <body>
+
+<!-- Facebook share button support -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+
+<!-- Twitter button support -->
+<script>
+	window.twttr = (
+		function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+			t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			t._e = [];
+			t.ready = function(f) {
+				t._e.push(f);
+			};
+			return t;
+		}(document, "script", "twitter-wjs")
+	);
+</script>
+
 <header>
-	<h1>COVID-19 by County</h1>
+	<h1>Covid-19 by County</h1>
 </header>
+
 <section class="map">
 	<div id="map">
 	</div>
 </section>
+
 <main>
-	<h1>County Case-Counts of Covid-19</h1>
+	<h1>Covid-19 by County</h1>
 	<p>
 		Most recent data: March 23rd, 12PM (EST)
 	</p>
@@ -113,10 +65,7 @@
 	<p>
 		Black regions have no data (yet). Finding a source for a state takes some time. However, once that source is secured, updating is very quick.
 	</p>
-	<h2>Help update this map - Adopt a state</h2>
-	<p>
-		There are over 3000 counties in the US - I cannot do this alone. If you have time, please help keep this map updated. <a href="https://github.com/Navigatron/covid">Submit a pull request on github</a>.
-	</p>
+
 	<h2>Anomalies</h2>
 	<p>
 		Some states do not publish county-by-county statistics.
@@ -128,6 +77,27 @@
 		<li>Rhode Island</li>
 		<li>New Mexico</li>
 	</ul>
+	<h2>You can help</h2>
+	<h4>Update the Map</h4>
+	<p>
+		There are over 3000 counties in the US - I cannot do this alone. Help keep this map updated by <a href="https://github.com/Navigatron/covid">submitting a pull request on github</a>.
+	</p>
+	<h4>Share the map</h4>
+	<p>
+		Help others learn more.
+	</p>
+	<div id="social">
+		<div class="share-button">
+			<a
+				class="twitter-share-button"
+				href="https://twitter.com/intent/tweet">
+				Tweet
+			</a>
+		</div>
+		<div class="share-button">
+			<div class="fb-share-button" data-href="https://covidbycounty.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcovidbycounty.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+		</div>
+	</div>
 	<h2>Updates</h2>
 	<p>
 		This table is updated when state data is updated or a new state is added.
@@ -248,7 +218,7 @@
 	</table>
 </main>
 <footer>
-&copy; 2020 <a href="https://ewitherington.me">Ethan Witherington</a>
+&copy; 2020 <a href="https://ewitherington.me">Ethan Witherington</a> and <a href="https://github.com/Navigatron/covid/graphs/contributors">contributors</a>
 </footer>
 
 <script type="text/javascript">
