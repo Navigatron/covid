@@ -269,7 +269,7 @@
 	// looks like it just sets things to load, then call the function when the data is here
 	queue()
 		.defer(d3.json, "us.json")
-		.defer(d3.csv, "data.csv")
+		.defer(d3.csv, "jh_data.csv")
 		.await(ready);
 
 	function ready(error, us, data) {
@@ -306,11 +306,14 @@
 
 		// Kinda turn that csv into json
 		data.forEach(function(d) {
-			pairRateWithId[d.id] = +d.rate;
+			pairRateWithId[d.FIPS] = +d.Confirmed;
 			// IDs are given a rate variable
-			pairNameWithId[d.id] = d.name;
+			pairNameWithId[d.FIPS] = d.Admin2;
 			// IDs are given a *name* variable
+			//console.log('Processing ', d);
 		});
+
+		//console.log(pairRateWithId);
 
 		// Append a 'g' element to the svg (a group!)
 		svg.append("g")
@@ -331,6 +334,7 @@
 			.attr("d", path)
 			// Set the fill style of the path (county)
 			.style ( "fill" , function (d) {
+				//console.log(d);
 				return color (pairRateWithId[d.id]+1); // convert the ID's rate to a color. Color is a function that takes a number and returns a color
 				// Plus 1 is in there to counter the log limitation of all values positive
 			})
@@ -347,7 +351,7 @@
 				.style("opacity", 1);
 
 				// show the tooltip
-				div.text(d.id + ": " + pairNameWithId[d.id] + ": " + pairRateWithId[d.id])
+				div.text(d.id + ": " + pairNameWithId[d.FIPS] + ": " + pairRateWithId[d.FIPS])
 				.style("left", (d3.event.pageX+10) + "px")
 				.style("top", (d3.event.pageY -30) + "px");
 			})
