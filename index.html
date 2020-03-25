@@ -57,7 +57,7 @@
 <main>
 	<h1>Covid-19 by County</h1>
 	<p>
-		Most recent data: March 23rd, 12PM (EST)
+		Last update: 2020-03-24
 	</p>
 	<p>
 		Data is from the department of health for each state. See the table below for more information.
@@ -98,7 +98,14 @@
 			<div class="fb-share-button" data-href="https://covidbycounty.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcovidbycounty.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 		</div>
 	</div>
-	<h2>Updates</h2>
+	<h2>Data Source</h2>
+	<p>
+		Data is from John Hopkins daily reports.
+	</p>
+	<h2>Old Data Sources</h2>
+	<p>
+		Before switching to john hopkins data, we used the below sources.
+	</p>
 	<p>
 		This table is updated when state data is updated or a new state is added.
 	</p>
@@ -269,7 +276,7 @@
 	// looks like it just sets things to load, then call the function when the data is here
 	queue()
 		.defer(d3.json, "us.json")
-		.defer(d3.csv, "jh_data.csv")
+		.defer(d3.csv, "03-24-2020.csv")
 		.await(ready);
 
 	function ready(error, us, data) {
