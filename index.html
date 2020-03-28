@@ -276,7 +276,7 @@
 	// looks like it just sets things to load, then call the function when the data is here
 	queue()
 		.defer(d3.json, "us.json")
-		.defer(d3.csv, "03-24-2020.csv")
+		.defer(d3.csv, "03-27-2020.csv")
 		.await(ready);
 
 	function ready(error, us, data) {
