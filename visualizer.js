@@ -232,6 +232,15 @@ function showDate(error, data){
 			fips = '0'+fips;
 		}
 
+		// exception for a county in south dakota that changed fips code
+		// There is a single south-dakota county that changed fips code
+		// old code, in the map: 46113
+		// jh gives data for: 46102
+		// when we encounter county 46113, treat it as 46102
+		if(''+fips==='46113'){
+			fips = '46102';
+		}
+
 		let myData = jdata[fips];
 		let path = d3.select(this);
 		if(myData){
