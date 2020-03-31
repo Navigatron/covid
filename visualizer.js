@@ -216,7 +216,7 @@ function showDate(error, data){
 	// csv data to json-like data
 	let jdata = {};
 	data.forEach(function(d) {
-		jdata[d.FIPS] = {
+		jdata[""+d.FIPS] = {
 			name: d.Admin2,
 			count: +d.Confirmed
 		};
@@ -225,7 +225,14 @@ function showDate(error, data){
 	svg.select('.county').selectAll('path').each(function(d, i){
 		// d is an object
 		// we need to get its id: d.id, YES
-		let myData = jdata[d.id];
+
+		// Re-add the leading zero to county ID codes
+		let fips = d.id;
+		if((""+fips).length===4){
+			fips = '0'+fips;
+		}
+
+		let myData = jdata[fips];
 		let path = d3.select(this);
 		if(myData){
 			// set the easy ones
