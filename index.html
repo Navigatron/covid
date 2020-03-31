@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Covid-19 case counts by county. No silly circles.">
+	<meta name="description" content="Covid-19 case counts by county. The best color scale and no silly circles.">
 	<link rel="canonical" href="https://covidbycounty.com">
 
 	<meta property="og:url"           content="https://covidbycounty.com" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Covid-19 by County" />
-	<meta property="og:description"   content="Covid-19 case counts by county" />
-	<meta property="og:image"         content="https://covidbycounty.com/preview.png?v=1" />
+	<meta property="og:description"   content="Covid-19 case counts by county. The best color scale and no silly circles." />
+	<meta property="og:image"         content="https://covidbycounty.com/preview.png?v=2" />
 	<meta name="twitter:card" content="summary_large_image">
 
 	<title>Covid-19 by County</title>
@@ -55,20 +55,44 @@
 </section>
 
 <main>
+	<button data-date="03-24-2020">March 24</button>
+	<button data-date="03-25-2020">March 25</button>
+	<button data-date="03-26-2020">March 26</button>
+	<button data-date="03-27-2020">March 27</button>
+	<button data-date="03-28-2020">March 28</button>
+	<button data-date="03-29-2020">March 29</button>
+	<button data-date="03-30-2020">March 30</button>
+	<p>
+		Currently displaying: <span id="cdate"></span>
+	</p>
 	<h1>Covid-19 by County</h1>
 	<p>
-		Last update: 2020-03-29
+		Data is from John Hopkins University, Center for System Science and Engineering.<br/><a href="https://github.com/CSSEGISandData/COVID-19">Visit their data repository</a>.
 	</p>
 	<p>
-		Data is from John Hopkins, as of 2020-03-28
+		The team at JHU updates almost 3000 counties every day. However, there are regions they haven't reached yet.
 	</p>
 	<p>
-		Regions in gray have no data.
+		Regions with no data are displayed in light gray.
 	</p>
-	<h4>Share the map</h4>
+	<h3>About this Map</h3>
 	<p>
-		Help others learn more.
+		This map displays covid-19 case-counts, by county, on a logarithmic color scale. No alarmism (red on black) or silly circles.
 	</p>
+	<p>
+		A logarithmic scale displays detail in small ranges (1 and 5 are distinguishable), while also showing percentage changes in the thousands.
+	</p>
+	<p>
+		Human eyes see certain colors as 'brighter' than others.
+		This map's color scale uses the HCL (Hue, Chroma, <i>Percieved</i> Lightness) model to compensate for this problem.
+	</p>
+	<p>
+		As a result this map is color-blind friendly, easy on the eyes, and clearer to interpret.
+	</p>
+	<p>
+		Read more about <a href="https://betterfigures.org/2015/06/23/picking-a-colour-scale-for-scientific-graphics/">better color scales for scientific graphics</a> on <a href="https://betterfigures.org">betterfigures.org</a>.
+	</p>
+	<h3>Share this map</h3>
 	<div id="social">
 		<div class="share-button">
 			<a
