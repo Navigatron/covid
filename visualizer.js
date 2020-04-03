@@ -1,7 +1,7 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDataDate = "03-30-2020";
+let defaultDisplayDate = "2020-04-01";
 
 // default map size
 let width = 960;
@@ -24,6 +24,14 @@ let colorMap = {
 
 // What color are undefined counties? (light gray)
 let colorUndefined = "#F1F1F1";
+
+// How fast will we transition between colors?
+let transitionTime = 300;
+
+// Somewhere to store the data.
+
+// counts of cases - populated by main.
+let dataset;
 
 // Create a function to turn a count into a color
 var color = d3.scale.log()
@@ -88,13 +96,17 @@ legend.append("text")
 
 // Trigger a map change when we click a button
 d3.selectAll('button').on("click", function(){
-	loadDate(d3.select(this).attr("data-date"));
+	// Get the desired date from the button
+	let datestring = d3.select(this).attr("data-date");
+	// show this date from the dataset
+	applyDataset(dataset, datestring);
+	// color the map
+	recolor();
+	// update the display date indicator
+	d3.select('#cdate').text(datestring);
 });
 
-// Kick-off this party by drawing the blank US.
-queue()
-	.defer(d3.json, "us.json")
-	.await(drawUS);
+
 
 // There are only scary things below this point.
 
@@ -118,8 +130,28 @@ d3.selection.prototype.moveToBack = function() {
 	});
 };
 
+// Functions go below here
+
+// loadUS
+// drawUS
+
+
+
+// return promise that resolves to US geoJson data
+async function loadUS(){
+	return new Promise((resolve, reject)=>{
+		queue()
+			.defer(d3.json, "us.json")
+			.await(function(err, us){
+				if(err) reject(err);
+				resolve(us);
+			});
+	})
+}
+
 // This function takes GeoJson data and draws the map of the US
-function drawUS(error, us){
+function drawUS(us){
+
 	// Add Counties
 	svg.append("g")
 		.attr("class", "county")
@@ -143,15 +175,15 @@ function drawUS(error, us){
 			// Make the tooltip show up
 			div.transition().duration(300).style("opacity", 1);
 
-			// populate the tooltip
-			// each county shall have associated data in json array
-			// div.text(d.id + ": " + pairNameWithId[d.id] + ": " + pairRateWithId[d.id])
+			// populate the tooltip, based on the counties data attributes.
 			let name = sel.attr("data-name");
 			let count = sel.attr("data-count");
+
 			let text = "no data";
-			if(name && count){
-				text = name+": "+count;
-			}
+			//if(name && count){
+			text = name+": "+count;
+			// todo - return this to fail gracefully, rather than informatively.
+			//}
 			div.text(text)
 			.style("left", (d3.event.pageX+10) + "px")
 			.style("top", (d3.event.pageY -30) + "px");
@@ -169,7 +201,7 @@ function drawUS(error, us){
 				scolor = "black";
 			}
 
-			// Fade the county back in
+			// Fade the border back out.
 			sel
 				.transition()
 				.duration(300)
@@ -180,6 +212,7 @@ function drawUS(error, us){
 				.duration(300)
 				.style("opacity", 0);
 		});
+
 	// State borders
 	svg.append("g")
 		.attr("class", "state")
@@ -195,69 +228,172 @@ function drawUS(error, us){
 			'stroke-width': 0.5,
 			'pointer-events': 'none' // hover events go to counties
 		});
-	// Part of drawing the US for the first time is populating with the default
-	loadDate(defaultDataDate);
+	// this is all that this function shall do
 }
 
-// takes a string in MM-DD-YYYY format, because that's what john hopkins uses :(
-// Loads that csv, and triggers a map update.
-function loadDate(date){
-	// update date display indicator
-	d3.select("#cdate").text(date);
-	// load that data, pipe to map updater
-	queue()
-		.defer(d3.csv, "data/"+date+".csv")
-		.await(showDate);
-}
+// loadNames
+// applyNames
 
-// use d3.csv to parse jh data, then drop that in here to show on the map.
-// This does the map update
-function showDate(error, data){
-	// csv data to json-like data
-	let jdata = {};
-	data.forEach(function(d) {
-		jdata[""+d.FIPS] = {
-			name: d.Admin2,
-			count: +d.Confirmed
-		};
+// Given a csv filename, return the contents of that file.
+async function loadCSV(filename){
+	return new Promise((resolve, reject)=>{
+		queue()
+			.defer(d3.csv, filename)
+			.await(function(err,data){
+				if(err) reject(err);
+				resolve(data);
+			});
 	});
+}
 
+// Return an object {fipscode: countyName, ...}
+async function loadNames(){
+	// The data is stored in csv because it is smaller
+	let namesArray = await loadCSV("names.csv");
+	// convert it to a better json structure
+	let namesMap = {};
+	namesArray.forEach(row=>{
+		namesMap[row.fips] = row.name;
+	});
+	return namesMap;
+}
+
+// Given a map {fips: countyName, ...} - apply to US.
+// requires that counties exist in the map.
+function applyNames(names){
 	svg.select('.county').selectAll('path').each(function(d, i){
-		// d is an object
-		// we need to get its id: d.id, YES
+		// Re-add the leading zero to county ID codes
+		let fips = d.id;
+		if((""+fips).length===4){
+			fips = '0'+fips;
+		}
+		// when we encounter county 46113, treat it as 46102
+		if(''+fips==='46113'){
+			fips = '46102';
+		}
+		// get the county
+		let path = d3.select(this);
+		if(names[fips]){
+			// set the name attribute for this county
+			path.attr("data-name", names[fips]);
+		}else{
+			path.attr("data-name", "unrecognized fips");
+		}
+	});
+}
 
+// loadDataset
+// applyDataset(date)
+
+async function loadDataset(){
+	let datasetArray = await loadCSV("data.csv");
+	// convert to json lookup structure
+	let datasetMap = {};
+	datasetArray.forEach(row=>{
+		if(!datasetMap[row.date]) datasetMap[row.date] = {};
+		if(!datasetMap[row.date][row.fips]) datasetMap[row.date][row.fips] = {};
+		datasetMap[row.date][row.fips].confirmed = row.confirmed;
+		datasetMap[row.date][row.fips].deaths = row.deaths;
+	});
+	return datasetMap;
+}
+
+// This does the map update, given a datestring as yyyy-mm-dd
+function applyDataset(dataset, datestring){
+	svg.select('.county').selectAll('path').each(function(d, i){
 		// Re-add the leading zero to county ID codes
 		let fips = d.id;
 		if((""+fips).length===4){
 			fips = '0'+fips;
 		}
 
-		// exception for a county in south dakota that changed fips code
 		// There is a single south-dakota county that changed fips code
-		// old code, in the map: 46113
-		// jh gives data for: 46102
-		// when we encounter county 46113, treat it as 46102
+		// when we encounter county 46113 (old), treat it as 46102 (new)
 		if(''+fips==='46113'){
 			fips = '46102';
 		}
 
-		let myData = jdata[fips];
+		let myData = dataset[datestring][fips];
+		// either undefined, or {confirmed, deaths}
 		let path = d3.select(this);
-		if(myData){
-			// set the easy ones
-			path
-				.attr("data-name", myData.name)
-				.attr("data-count", myData.count)
-				.style("stroke", "black");
-			// Transition to the new fill color
-			path
-				.transition()
-				.duration(300)
-				.style("fill", color(myData.count+1));
+		if(myData !== undefined){
+			path.attr("data-count", myData.confirmed)
 		}else{
-			path
-				.style("fill", colorUndefined)
-				.style("stroke", colorUndefined);
+			// for now, do nothing here.
 		}
 	});
 }
+
+// Color each county based on the county's data-color attribute.
+function recolor(){
+	svg.select('.county').selectAll('path').each(function(){
+		let path = d3.select(this);
+		let count = path.attr('data-count');
+		let newColor = colorUndefined;
+		let newStrokeColor = colorUndefined;
+		// console.log(count);
+		if(count!==null){
+			newColor = color(parseInt(count)+1); // account for log scale
+			newStrokeColor = "black";
+		}
+		// apply over a transition time
+		path
+			.transition()
+			.duration(transitionTime)
+			.style({"fill": newColor, "stroke": newStrokeColor});
+	})
+}
+
+async function main(){
+	// Get the US data
+	let usaDataPromise = loadUS();
+	// Get the names data
+	let namesPromise = loadNames();
+	// Get the case count dataset
+	let datasetPromise = loadDataset();
+
+	// When the usa data gets here, draw it.
+	let usaDrawnPromise = usaDataPromise.then(us=>drawUS(us));
+
+	// Wait for the usa to be drawn.
+	await usaDrawnPromise;
+
+	// Now that the counties are there, apply the names and the case counts.
+	namesPromise.then(names=>applyNames(names));
+	let dataInPromise = datasetPromise.then(data=>{
+		// save this for later
+		dataset = data;
+		// get it in the map
+		applyDataset(data, defaultDisplayDate);
+	});
+
+	// Once the data is in, perform the recolor
+	dataInPromise.then(()=>recolor()).then(()=>{
+		// once the map is colored, set the display indicator.
+		d3.select('#cdate').text(defaultDisplayDate);
+	});
+}
+
+main();
+
+/*
+
+// Only now that the map is drawn can we apply the names and counts.
+// Load the dataset
+queue()
+	.defer(d3.csv, "data.csv")
+	.await(loadData);
+
+// Download the county names and apply them.
+queue()
+	.defer(d3.csv, "nameMap.csv")
+	.await(applyNames);
+
+	//.style("stroke", "black");
+	// Transition to the new fill color
+	path
+	.transition()
+	.duration(300)
+	.style("fill", color(myData.confirmed+1));
+
+*/
