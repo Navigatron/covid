@@ -344,6 +344,41 @@ function recolor(){
 	})
 }
 
+// re-color the map with data from a given date.
+// relies on dataset being loaded and map being drawn.
+function showDate(datestring){
+	applyDataset(dataset, datestring);
+	recolor();
+	d3.select('#cdate').text(datestring);
+}
+
+// secret animation function
+function animate(){
+	let dates = [
+		'2020-03-23',
+		'2020-03-24',
+		'2020-03-25',
+		'2020-03-26',
+		'2020-03-27',
+		'2020-03-28',
+		'2020-03-29',
+		'2020-03-30',
+		'2020-03-31',
+		'2020-04-01',
+	];
+
+	let index = 0;
+
+	let showIndex = i => {
+		showDate(dates[i]);
+		if(i<dates.length-1){
+			setTimeout(()=>{showIndex(i+1)}, transitionTime);
+		}
+	};
+
+	showIndex(0);
+}
+
 async function main(){
 	// Get the US data
 	let usaDataPromise = loadUS();
