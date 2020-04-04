@@ -1,7 +1,7 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-04-02";
+let defaultDisplayDate = "2020-04-03";
 
 // default map size
 let width = 960;
@@ -95,7 +95,7 @@ legend.append("text")
 	.text(function(d, i){ return ""+d; });
 
 // Trigger a map change when we click a button
-d3.selectAll('button').on("click", function(){
+d3.select('.dateButtons').selectAll('button').on("click", function(){
 	// Get the desired date from the button
 	let datestring = d3.select(this).attr("data-date");
 	// show this date from the dataset
@@ -106,7 +106,9 @@ d3.selectAll('button').on("click", function(){
 	d3.select('#cdate').text(datestring);
 });
 
-
+d3.select('#animateButton').on('click', function(){
+	animate();
+})
 
 // There are only scary things below this point.
 
@@ -366,6 +368,7 @@ function animate(){
 		'2020-03-31',
 		'2020-04-01',
 		'2020-04-02',
+		'2020-04-03',
 	];
 
 	let index = 0;
