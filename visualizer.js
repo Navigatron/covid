@@ -1,7 +1,7 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-04-03";
+let defaultDisplayDate = "2020-04-06";
 
 // default map size
 let width = 960;
@@ -369,6 +369,9 @@ function animate(){
 		'2020-04-01',
 		'2020-04-02',
 		'2020-04-03',
+		'2020-04-04',
+		'2020-04-05',
+		'2020-04-06',
 	];
 
 	let index = 0;
