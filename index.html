@@ -68,22 +68,11 @@
 	<p>
 		Currently displaying: <span id="cdate"></span>
 	</p>
-	<div class="dateButtons">
-		<button data-date="2020-03-23">March 23</button>
-		<button data-date="2020-03-24">March 24</button>
-		<button data-date="2020-03-25">March 25</button>
-		<button data-date="2020-03-26">March 26</button>
-		<button data-date="2020-03-27">March 27</button>
-		<button data-date="2020-03-28">March 28</button>
-		<button data-date="2020-03-29">March 29</button>
-		<button data-date="2020-03-30">March 30</button>
-		<button data-date="2020-03-31">March 31</button>
-		<button data-date="2020-04-01">April 1</button>
-		<button data-date="2020-04-02">April 2</button>
-		<button data-date="2020-04-03">April 3</button>
-		<button data-date="2020-04-04">April 4</button>
-		<button data-date="2020-04-05">April 5</button>
-		<button data-date="2020-04-06">April 6</button>
+	<div class="slider">
+		<!-- March 23rd to April 10th -->
+		<span>March 23rd</span>
+		<input id="dateInput" type="range" min="1584921600" max="1586476800" step="86400" value="1586476800">
+		<span>April 10th</span>
 	</div>
 	<button id='animateButton'>Animate</button>
 	<h1>Covid-19 by County</h1>
@@ -91,7 +80,7 @@
 		Data is from John Hopkins University, Center for System Science and Engineering.
 	</p>
 	<p>
-		Use the buttons above to display data from different days. Use the animate button to see each day, one after the other.
+		Use the slider above to display data from different days. Use the animate button to see each day, one after the other.
 	</p>
 	<p>
 		We are working on displaying data for regions in light gray.
@@ -134,14 +123,6 @@
 		Help support the upkeep of this map by donating a cup of coffee.
 	</p>
 	<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#000000', 'P5P81KD1M');kofiwidget2.draw();</script>
-	<p>
-		If you prefer crypto, I'm happy to accept.
-	</p>
-<pre style="background-color:lightgrey;display:inline-block;padding:1rem;">
-BTC: 1JiDfzvHxSPTvUkPnvXsaXmjWR9YayNBmR
-LTC: LUGbG3EDrcpAgj9gmZAxBboJGxVaGm5GnZ
-ETH: 0xcfb06842A99F4ca1B2b1C8Be062E1076F28837a8
-</pre>
 </main>
 
 <footer>

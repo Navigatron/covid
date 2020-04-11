@@ -1,7 +1,7 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-04-06";
+let defaultDisplayDate = "2020-04-10";
 
 // default map size
 let width = 960;
@@ -10,25 +10,27 @@ let height = 600;
 // color - map from value to color
 // created using hclwizard
 let colorMap = {
-	10000:"#4A007E",
-	3162:"#790887",
-	1000:"#A21E8C",
-	316:"#C63A8B",
-	100:"#E55A7E",
-	32:"#F98067",
-	10:"#FEA95D",
-	3:"#FFCF6E",
-	1:"#FDF39E",
-	0:"#D1FFA9"
+	100000:	"#001E71", // I'm surprised it's come to this.
+	31623:	"#4B1883",
+	10000:	"#7C0F91",
+	3162:	"#A60C9A",
+	1000:	"#CA2199",
+	316:	"#E93F8D",
+	100:	"#F66B79",
+	32:		"#FC926B",
+	10:		"#FEB46C",
+	3:		"#FDD582",
+	1:		"#FCF3A6",
+	0:		"#CFFEB2",
 };
+
+// The magic number is 316228
 
 // What color are undefined counties? (light gray)
 let colorUndefined = "#F1F1F1";
 
 // How fast will we transition between colors?
 let transitionTime = 300;
-
-// Somewhere to store the data.
 
 // counts of cases - populated by main.
 let dataset;
@@ -62,7 +64,7 @@ var svg = d3.select("#map").append("svg")
 var path = d3.geo.path();
 
 // What keys we will show in the legend
-let legendKeys = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000];
+let legendKeys = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000,20000,50000,100000];
 
 // The Legend is a d3 selection of legend objects - there are many
 var legend = svg.selectAll("g.legend")
@@ -95,9 +97,9 @@ legend.append("text")
 	.text(function(d, i){ return ""+d; });
 
 // Trigger a map change when we click a button
-d3.select('.dateButtons').selectAll('button').on("click", function(){
+d3.select('#dateInput').on("input", function(){
 	// Get the desired date from the button
-	let datestring = d3.select(this).attr("data-date");
+	let datestring = new Date(this.value*1000).toISOString().substr(0,10);
 	// show this date from the dataset
 	applyDataset(dataset, datestring);
 	// color the map
@@ -349,33 +351,29 @@ function recolor(){
 // re-color the map with data from a given date.
 // relies on dataset being loaded and map being drawn.
 function showDate(datestring){
+	d3.select('#dateInput').property("value", new Date(Date.parse(datestring)).getTime()/1000);
 	applyDataset(dataset, datestring);
 	recolor();
 	d3.select('#cdate').text(datestring);
 }
 
-// secret animation function
+// No-longer-secret Animation function
 function animate(){
-	let dates = [
-		'2020-03-23',
-		'2020-03-24',
-		'2020-03-25',
-		'2020-03-26',
-		'2020-03-27',
-		'2020-03-28',
-		'2020-03-29',
-		'2020-03-30',
-		'2020-03-31',
-		'2020-04-01',
-		'2020-04-02',
-		'2020-04-03',
-		'2020-04-04',
-		'2020-04-05',
-		'2020-04-06',
-	];
 
-	let index = 0;
+	// A few constants to help things out
+	let theBeginningOfTime = new Date(Date.parse('2020-03-23')).getTime();
+	let theEndofTime = new Date(Date.parse(defaultDisplayDate)).getTime();
+	let oneSingleDay = 60 * 60 * 24 * 1000;
 
+	// Array of dates to show - we no longer populate this manually lol.
+	let dates = [];
+
+	// Iterate over all of time to populate the list of dates
+	for (var i = theBeginningOfTime; i <= theEndofTime; i+=oneSingleDay) {
+		dates.push(new Date(i).toISOString().substr(0,10));
+	}
+
+	// Show a given index in the dates array, then the next one, then...
 	let showIndex = i => {
 		showDate(dates[i]);
 		if(i<dates.length-1){
@@ -383,7 +381,11 @@ function animate(){
 		}
 	};
 
+	// Kick it off with the first one.
 	showIndex(0);
+
+	// There's a much better way to do this but ya know how it is
+	// we'll get there eventually
 }
 
 async function main(){
