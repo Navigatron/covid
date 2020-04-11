@@ -361,7 +361,7 @@ function showDate(datestring){
 function animate(){
 
 	// A few constants to help things out
-	let theBeginningOfTime = new Date(Date.parse('2020-03-23')).getTime();
+	let theBeginningOfTime = new Date(Date.parse('2020-03-01')).getTime();
 	let theEndofTime = new Date(Date.parse(defaultDisplayDate)).getTime();
 	let oneSingleDay = 60 * 60 * 24 * 1000;
 
