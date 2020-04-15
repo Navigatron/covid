@@ -24,6 +24,7 @@
 	</script>
 
 	<title>Covid-19 by County</title>
+	<script src="http://ariutta.github.io/svg-pan-zoom/dist/svg-pan-zoom.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/queue.v1.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/topojson.v1.min.js"></script>
@@ -75,6 +76,7 @@
 		<span>April 13th</span>
 	</div>
 	<button id='animateButton'>Animate</button>
+
 	<h1>Covid-19 by County</h1>
 	<p>
 		Data is from John Hopkins University, Center for System Science and Engineering.
@@ -102,6 +104,11 @@
 	<p>
 		Read more about <a href="https://betterfigures.org/2015/06/23/picking-a-colour-scale-for-scientific-graphics/">better color scales for scientific graphics</a> on <a href="https://betterfigures.org">betterfigures.org</a>.
 	</p>
+	<h3>Experimental Features</h3>
+	<p>
+		Panning and Zooming the map requires more testing, specifically on phones, to make sure it works right. You can try it out by clicking this button.
+	</p>
+	<button id="buttonZoom">Activate Zoom</button>
 	<h3>Share this map</h3>
 	<div id="social">
 		<div class="share-button">
