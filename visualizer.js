@@ -5,7 +5,7 @@ let defaultDisplayDate = "2020-04-13";
 
 // default map size
 let width = 960;
-let height = 600;
+let height = 550;
 
 // color - map from value to color
 // created using hclwizard
@@ -48,6 +48,7 @@ var div = d3.select("body")
 
 // Create the svg, set some attributes
 var svg = d3.select("#map").append("svg")
+	.attr("id", "mapsvg")
 	.attr("width", width)
 	.attr("viewBox", "0 0 "+width+" "+height)
 	.attr("height", height)
@@ -55,10 +56,25 @@ var svg = d3.select("#map").append("svg")
 	.style("height", "100%")
 	.style("margin", "0px auto");
 
+// I think the easiest way to get zoom going is by ripping the legend out entirely.
+
+var lsvg = d3.select("#map").append("svg")
+	.attr("width", width)
+	.attr("height", 50)
+
 // Zoom is going to be a little tough
 // .call(d3.behavior.zoom().on("zoom", function () {
 // 	svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
 // }));
+
+let turnOnZoom = function(){
+	d3.select('#mapsvg')
+		.style("border",  "2px solid black")
+		.style("box-sizing", "border-box");
+	svgPanZoom('#mapsvg');
+}
+
+d3.select('#buttonZoom').on('click', function(){turnOnZoom();d3.select(this).text('Zoom is Activated')});
 
 // Create the 'path' function, for GeoJson data
 var path = d3.geo.path();
@@ -67,7 +83,7 @@ var path = d3.geo.path();
 let legendKeys = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000,20000,50000,100000];
 
 // The Legend is a d3 selection of legend objects - there are many
-var legend = svg.selectAll("g.legend")
+var legend = lsvg.selectAll("g.legend")
 	// binds together the data and the selection
 	.data(legendKeys)
 	// Tell how to create a new thing if there's too much data
@@ -83,7 +99,7 @@ var ls_h = 20;
 // Legend Rectangles.
 legend.append("rect")
 	.attr("x", function(d, i){ return (i*ls_w);})
-	.attr("y", 550)
+	.attr("y", 0)
 	.attr("width", ls_w)
 	.attr("height", ls_h)
 	.style("fill", function(d, i) { return color(d+1); }) // the plus one is for the log scale
@@ -93,7 +109,7 @@ legend.append("rect")
 // Legend Text
 legend.append("text")
 	.attr("x", function(d, i){ return (i*ls_w);})
-	.attr("y", 590)
+	.attr("y", 40)
 	.text(function(d, i){ return ""+d; });
 
 // Trigger a map change when we click a button
