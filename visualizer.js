@@ -63,6 +63,8 @@ var svg = d3.select("#map").append("svg")
 // Create the 'path' function, for GeoJson data
 var path = d3.geo.path();
 
+// Here's some stuff for the legend
+
 // What keys we will show in the legend
 let legendKeys = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000,20000,50000,100000];
 
@@ -96,6 +98,18 @@ legend.append("text")
 	.attr("y", 590)
 	.text(function(d, i){ return ""+d; });
 
+// Here's some of my custom stuff
+
+let statusLine = svg.append("text")
+	.attr("x", "50%")
+	.attr("y", "20px")
+	.attr("text-anchor", "middle")
+	.text("Total cases as of "+defaultDisplayDate);
+
+let setStatusLine = function(input){
+	statusLine.text(input);
+};
+
 // Trigger a map change when we click a button
 d3.select('#dateInput').on("input", function(){
 	// Get the desired date from the button
@@ -106,6 +120,7 @@ d3.select('#dateInput').on("input", function(){
 	recolor();
 	// update the display date indicator
 	d3.select('#cdate').text(datestring);
+	setStatusLine("Total cases as of "+datestring);
 });
 
 d3.select('#animateButton').on('click', function(){
@@ -354,7 +369,8 @@ function showDate(datestring){
 	d3.select('#dateInput').property("value", new Date(Date.parse(datestring)).getTime()/1000);
 	applyDataset(dataset, datestring);
 	recolor();
-	d3.select('#cdate').text(datestring);
+	d3.select('#cdate').text(datestring); // todo remove
+	setStatusLine("Total cases as of "+datestring);
 }
 
 // No-longer-secret Animation function
