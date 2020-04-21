@@ -1,7 +1,7 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-04-16";
+let defaultDisplayDate = "2020-04-20";
 
 // default map size
 let width = 960;
