@@ -9,10 +9,11 @@
 	<meta property="og:url"           content="https://covidbycounty.com" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Covid-19 by County" />
-	<meta property="og:description"   content="Covid-19 case counts by county. The best color scale and no silly circles." />
+	<meta property="og:description"   content="Covid-19 case counts by county." />
 	<meta property="og:image"         content="https://covidbycounty.com/preview.png?v=4" />
 
 	<meta name="twitter:card" content="summary_large_image">
+
 	<!-- All hail -->
 	<meta name="google-site-verification" content="Luw60ibmGCqRnKkO18vHUrCUgPFjWWAy4sRBkU0jmLQ" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162384191-1"></script>
@@ -66,13 +67,21 @@
 
 <main>
 	<p>
-		Currently displaying: <span id="cdate"></span>
+		Showing
+		<select id="key_settr">
+			<option value="cases">Total Cases</option>
+			<option value="cases_new">New Cases</option>
+			<option value="deaths">Total Deaths</option>
+			<option value="deaths_new">New Deaths</option>
+		</select>
+		<span id="cdate"></span>
 	</p>
+
 	<div class="slider">
 		<!-- March 23rd to April 10th -->
 		<span>March 1st</span>
-		<input id="dateInput" type="range" min="1583020800" max="1588377600" step="86400" value="1588377600">
-		<span>May 2nd</span>
+		<input id="dateInput" type="range" min="1583020800" max="1593216000" step="86400" value="1588377600">
+		<span>June 27th</span>
 	</div>
 	<button id='animateButton'>Animate</button>
 	<h1>Covid-19 by County</h1>

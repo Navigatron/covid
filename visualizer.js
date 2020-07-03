@@ -1,7 +1,36 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-05-02";
+let defaultDisplayDate = "2020-06-27";
+
+let keys = {
+	"cases": {
+		"display": "Total Cases",
+		"transition": "as of"
+	},
+	"cases_new": {
+		"display": "New Cases",
+		"transition": "on"
+	},
+	"deaths": {
+		"display": "Total Deaths",
+		"transition": "as of"
+	},
+	"deaths_new": {
+		"display": "New Deaths",
+		"transition": "on"
+	}
+};
+
+let currentDate = defaultDisplayDate;
+let getCurrentDate = () => {
+	return currentDate;
+};
+
+let currentKey = "cases";
+let getCurrentKey = ()=>{
+	return currentKey;
+};
 
 // default map size
 let width = 960;
@@ -30,10 +59,12 @@ let colorMap = {
 let colorUndefined = "#F1F1F1";
 
 // How fast will we transition between colors?
-let transitionTime = 300;
+let transitionTime = 250;
 
 // counts of cases - populated by main.
 let dataset;
+
+// ------------------------------------ d3 -------------------------------------
 
 // Create a function to turn a count into a color
 var color = d3.scale.log()
@@ -98,13 +129,13 @@ legend.append("text")
 	.attr("y", 590)
 	.text(function(d, i){ return ""+d; });
 
-// Here's some of my custom stuff
+// --------------------------------- Controls ----------------------------------
 
 let statusLine = svg.append("text")
 	.attr("x", "50%")
 	.attr("y", "20px")
 	.attr("text-anchor", "middle")
-	.text("Total cases as of "+defaultDisplayDate);
+	.text("Loading Data...");
 
 let setStatusLine = function(input){
 	statusLine.text(input);
@@ -114,22 +145,50 @@ let setStatusLine = function(input){
 d3.select('#dateInput').on("input", function(){
 	// Get the desired date from the button
 	let datestring = new Date(this.value*1000).toISOString().substr(0,10);
-	// show this date from the dataset
-	applyDataset(dataset, datestring);
-	// color the map
-	recolor();
-	// update the display date indicator
-	d3.select('#cdate').text(datestring);
-	setStatusLine("Total cases as of "+datestring);
+	setDate(datestring);
 });
 
 d3.select('#animateButton').on('click', function(){
 	animate();
 })
 
+// Trigger a key change when we... change keys
+d3.select('#key_settr').on("input", function(){
+	// Get the desired date from the button
+	setKey(this.value);
+});
+
+// For when a control changes the key
+let setKey = (keyName) => {
+	currentKey = keyName;
+	fullUpdate(dataset, getCurrentDate(), keyName);
+};
+// For when a control/animation changes the date
+let setDate = (datestring, updateControls) => {
+	currentDate = datestring;
+	fullUpdate(dataset, currentDate, getCurrentKey());
+	if(updateControls){
+		d3.select('#dateInput').property("value", new Date(Date.parse(datestring)).getTime()/1000);
+	}
+};
+
+// Update everything. There are a few components in this.
+let fullUpdate = (dataset, datestring, keyName) => {
+	let keyDisplay = keys[keyName].display;
+	let keyTransition = keys[keyName].transition;
+	updateMap(dataset, datestring, keyName);
+	setStatusLine(keyDisplay + " " + keyTransition + " " + datestring);
+	setSecondStatusLine(keyTransition+" "+datestring);
+};
+
+let setSecondStatusLine = (line) => {
+	d3.select('#cdate').text(line);
+};
+
 // There are only scary things below this point.
 
 // Scary thing #1 - prototyple polution.
+
 // Moves selction to front
 d3.selection.prototype.moveToFront = function() {
 	return this.each(
@@ -139,7 +198,7 @@ d3.selection.prototype.moveToFront = function() {
 	);
 };
 
-// Moves selction to back
+// Moves selection to back
 d3.selection.prototype.moveToBack = function() {
 	return this.each(function() {
 		var firstChild = this.parentNode.firstChild;
@@ -150,11 +209,6 @@ d3.selection.prototype.moveToBack = function() {
 };
 
 // Functions go below here
-
-// loadUS
-// drawUS
-
-
 
 // return promise that resolves to US geoJson data
 async function loadUS(){
@@ -250,14 +304,11 @@ function drawUS(us){
 	// this is all that this function shall do
 }
 
-// loadNames
-// applyNames
-
 // Given a csv filename, return the contents of that file.
 async function loadCSV(filename){
 	return new Promise((resolve, reject)=>{
 		queue()
-			.defer(d3.csv, filename)
+			.defer(d3.csv, filename) // the .on handler gets progress events
 			.await(function(err,data){
 				if(err) reject(err);
 				resolve(data);
@@ -301,9 +352,6 @@ function applyNames(names){
 	});
 }
 
-// loadDataset
-// applyDataset(date)
-
 async function loadDataset(){
 	let datasetArray = await loadCSV("data.csv");
 	// convert to json lookup structure
@@ -311,66 +359,62 @@ async function loadDataset(){
 	datasetArray.forEach(row=>{
 		if(!datasetMap[row.date]) datasetMap[row.date] = {};
 		if(!datasetMap[row.date][row.fips]) datasetMap[row.date][row.fips] = {};
-		datasetMap[row.date][row.fips].confirmed = row.confirmed;
-		datasetMap[row.date][row.fips].deaths = row.deaths;
+		datasetMap[row.date][row.fips] = {
+			cases: row.cases,
+			cases_new: row.cases_new,
+			deaths: row.deaths,
+			deaths_new: row.deaths_new
+		};
 	});
 	return datasetMap;
 }
 
-// This does the map update, given a datestring as yyyy-mm-dd
-function applyDataset(dataset, datestring){
+// Update the map to show a given key on a given date
+function updateMap(dataset, datestring, key){
+
+	// Iterate over each county on the map
 	svg.select('.county').selectAll('path').each(function(d, i){
-		// Re-add the leading zero to county ID codes
+
+		// This is the 'path' object, used for coloring the county.
+		let path = d3.select(this);
+
+		// Get the FIPS code for this county
 		let fips = d.id;
+		// ... and compensate for fips problems.
 		if((""+fips).length===4){
 			fips = '0'+fips;
 		}
-
 		// There is a single south-dakota county that changed fips code
 		// when we encounter county 46113 (old), treat it as 46102 (new)
 		if(''+fips==='46113'){
 			fips = '46102';
 		}
 
-		let myData = dataset[datestring][fips];
-		// either undefined, or {confirmed, deaths}
-		let path = d3.select(this);
-		if(myData !== undefined){
-			path.attr("data-count", myData.confirmed)
-		}else{
-			// for now, do nothing here.
-		}
-	});
-}
+		// Extract the dataPoint of choice
+		let dataPoint = dataset[datestring][fips];
+		if(dataPoint){dataPoint=dataPoint[key]}else{dataPoint=0} // hack
 
-// Color each county based on the county's data-color attribute.
-function recolor(){
-	svg.select('.county').selectAll('path').each(function(){
-		let path = d3.select(this);
-		let count = path.attr('data-count');
-		let newColor = colorUndefined;
-		let newStrokeColor = colorUndefined;
-		// console.log(count);
-		if(count!==null){
-			newColor = color(parseInt(count)+1); // account for log scale
-			newStrokeColor = "black";
-		}
-		// apply over a transition time
+		// As of 2020-06-29, if the datapoint is missing,
+		// then the county has been historically at zero for all keys.
+		// if(dataPoint===undefined){
+		// 	dataPoint = 0;
+		// }
+
+		// Color values for the county
+		let newColor = color(parseInt(dataPoint)+1);
+		let newStrokeColor = "black";
+
+		// set the silly data-count attribute on the county,
+		// such that the tooltip can display correctly on hover.
+		path.attr("data-count", dataPoint);
+		// TODO - I would really like to do this differently.
+
+		// Apply the color-changes
 		path
 			.transition()
 			.duration(transitionTime)
 			.style({"fill": newColor, "stroke": newStrokeColor});
-	})
-}
-
-// re-color the map with data from a given date.
-// relies on dataset being loaded and map being drawn.
-function showDate(datestring){
-	d3.select('#dateInput').property("value", new Date(Date.parse(datestring)).getTime()/1000);
-	applyDataset(dataset, datestring);
-	recolor();
-	d3.select('#cdate').text(datestring); // todo remove
-	setStatusLine("Total cases as of "+datestring);
+	});
 }
 
 // No-longer-secret Animation function
@@ -391,7 +435,7 @@ function animate(){
 
 	// Show a given index in the dates array, then the next one, then...
 	let showIndex = i => {
-		showDate(dates[i]);
+		setDate(dates[i], true); // the true updates the date controls
 		if(i<dates.length-1){
 			setTimeout(()=>{showIndex(i+1)}, transitionTime);
 		}
@@ -402,7 +446,18 @@ function animate(){
 
 	// There's a much better way to do this but ya know how it is
 	// we'll get there eventually
+
+	// 2 months later, I'm embarrased to say I wrote this.
+	// This could be so much better.
+	// But for now it works, and I've got bigger fish to fry
+	// lol
 }
+
+// set the global state?
+
+// updateController
+// updateControllerAndView
+// updateView
 
 async function main(){
 	// Get the US data
@@ -423,37 +478,14 @@ async function main(){
 	let dataInPromise = datasetPromise.then(data=>{
 		// save this for later
 		dataset = data;
-		// get it in the map
-		applyDataset(data, defaultDisplayDate);
+		setDate(defaultDisplayDate, true);
 	});
 
-	// Once the data is in, perform the recolor
-	dataInPromise.then(()=>recolor()).then(()=>{
+	// Once the data is in, set the status line?
+	dataInPromise.then(()=>{
 		// once the map is colored, set the display indicator.
 		d3.select('#cdate').text(defaultDisplayDate);
 	});
 }
 
 main();
-
-/*
-
-// Only now that the map is drawn can we apply the names and counts.
-// Load the dataset
-queue()
-	.defer(d3.csv, "data.csv")
-	.await(loadData);
-
-// Download the county names and apply them.
-queue()
-	.defer(d3.csv, "nameMap.csv")
-	.await(applyNames);
-
-	//.style("stroke", "black");
-	// Transition to the new fill color
-	path
-	.transition()
-	.duration(300)
-	.style("fill", color(myData.confirmed+1));
-
-*/
