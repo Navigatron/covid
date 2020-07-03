@@ -484,7 +484,7 @@ async function main(){
 	// Once the data is in, set the status line?
 	dataInPromise.then(()=>{
 		// once the map is colored, set the display indicator.
-		d3.select('#cdate').text(defaultDisplayDate);
+		// d3.select('#cdate').text(defaultDisplayDate);
 	});
 }
 
