@@ -3,7 +3,7 @@
 // When the page loads, what data do we show first?
 let defaultDisplayDate = "2020-07-03";
 let defaultDisplayDateDisplay = "July 3rd";
-let datacsvFileSize = 1884632; // used by loading indicator
+let datacsvFileSize = 9973860; // used by loading indicator
 
 let keys = {
 	"cases": {
