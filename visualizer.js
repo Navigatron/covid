@@ -1,7 +1,8 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-06-27";
+let defaultDisplayDate = "2020-07-03";
+let defaultDisplayDateDisplay = "July 3rd";
 
 let keys = {
 	"cases": {
@@ -304,11 +305,20 @@ function drawUS(us){
 	// this is all that this function shall do
 }
 
+function progressCSV(filename, callback){
+	// load the filename, and provide it to the callback
+	d3.csv(filename, callback).on("progress", ()=>{
+		setStatusLine("Loading ("+Math.round(d3.event.loaded/99738.6)+"%)");
+	});
+}
+
 // Given a csv filename, return the contents of that file.
 async function loadCSV(filename){
 	return new Promise((resolve, reject)=>{
 		queue()
-			.defer(d3.csv, filename) // the .on handler gets progress events
+			.defer(progressCSV, filename)
+				// d3.csv takes filename, callback
+				// calls callback with error, result
 			.await(function(err,data){
 				if(err) reject(err);
 				resolve(data);
@@ -479,6 +489,9 @@ async function main(){
 		// save this for later
 		dataset = data;
 		setDate(defaultDisplayDate, true);
+		d3.select('#dateInput').property("max", new Date(Date.parse(defaultDisplayDate)).getTime()/1000);
+		d3.select('#dateInput').property("value", new Date(Date.parse(defaultDisplayDate)).getTime()/1000);
+		d3.select('#edate').text(defaultDisplayDateDisplay);
 	});
 
 	// Once the data is in, set the status line?
