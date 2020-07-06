@@ -3,6 +3,7 @@
 // When the page loads, what data do we show first?
 let defaultDisplayDate = "2020-07-03";
 let defaultDisplayDateDisplay = "July 3rd";
+let datacsvFileSize = 1884632; // used by loading indicator
 
 let keys = {
 	"cases": {
@@ -308,7 +309,7 @@ function drawUS(us){
 function progressCSV(filename, callback){
 	// load the filename, and provide it to the callback
 	d3.csv(filename, callback).on("progress", ()=>{
-		setStatusLine("Loading ("+Math.round(d3.event.loaded/99738.6)+"%)");
+		setStatusLine("Loading ("+Math.round(d3.event.loaded/datacsvFileSize*100)+"%)");
 	});
 }
 
