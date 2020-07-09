@@ -1,9 +1,9 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-07-05";
-let defaultDisplayDateDisplay = "July 5th";
-let datacsvFileSize = 10148793; // used by loading indicator
+let defaultDisplayDate = "2020-07-07";
+let defaultDisplayDateDisplay = "July 7th";
+let datacsvFileSize = 10330877; // used by loading indicator
 
 let keys = {
 	"cases": {
@@ -463,6 +463,12 @@ function animate(){
 	// But for now it works, and I've got bigger fish to fry
 	// lol
 }
+
+// Calculate the RS14 metric
+function calcRS14(){
+	// Iterate over all dates
+
+};
 
 // set the global state?
 
