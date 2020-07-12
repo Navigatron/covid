@@ -1,9 +1,9 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-07-07";
-let defaultDisplayDateDisplay = "July 7th";
-let datacsvFileSize = 10330877; // used by loading indicator
+let defaultDisplayDate = "2020-07-10";
+let defaultDisplayDateDisplay = "July 10th";
+let datacsvFileSize = 111636921; // used by loading indicator
 
 let keys = {
 	"cases": {
@@ -20,6 +20,10 @@ let keys = {
 	},
 	"deaths_new": {
 		"display": "New Deaths",
+		"transition": "on"
+	},
+	"rs14": {
+		"display": "RS14 Index",
 		"transition": "on"
 	}
 };
@@ -41,18 +45,19 @@ let height = 600;
 // color - map from value to color
 // created using hclwizard
 let colorMap = {
-	100000:	"#001E71", // I'm surprised it's come to this.
-	31623:	"#4B1883",
-	10000:	"#7C0F91",
-	3162:	"#A60C9A",
-	1000:	"#CA2199",
-	316:	"#E93F8D",
-	100:	"#F66B79",
-	32:		"#FC926B",
-	10:		"#FEB46C",
-	3:		"#FDD582",
-	1:		"#FCF3A6",
-	0:		"#CFFEB2",
+	316228:	"#0D101D", // I'm... not sure what to think anymore.
+	100000:	"#27193F", // I'm surprised it's come to this.
+	31623:	"#4A1B59",
+	10000:	"#6F1A6C",
+	3162:	"#941E76",
+	1000:	"#B62C76",
+	316:	"#D3446A",
+	100:	"#E8644E",
+	32:		"#EB8B41",
+	10:		"#EDAF50",
+	3:		"#EFD176",
+	1:		"#F6F5A6",
+	0:		"#CFFEB2", // 2020-07-12 : loss of distinction between 0 and 1 for colorblind
 };
 
 // The magic number is 316228
@@ -99,7 +104,7 @@ var path = d3.geo.path();
 // Here's some stuff for the legend
 
 // What keys we will show in the legend
-let legendKeys = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000,20000,50000,100000];
+let legendKeys = [0,1,2,5,10,20,50,100,200,500, 1000,2000,5000,10000,20000,50000,100000,200000];
 
 // The Legend is a d3 selection of legend objects - there are many
 var legend = svg.selectAll("g.legend")
@@ -374,7 +379,8 @@ async function loadDataset(){
 			cases: row.cases,
 			cases_new: row.cases_new,
 			deaths: row.deaths,
-			deaths_new: row.deaths_new
+			deaths_new: row.deaths_new,
+			rs14: row.rs14
 		};
 	});
 	return datasetMap;
@@ -405,11 +411,9 @@ function updateMap(dataset, datestring, key){
 		let dataPoint = dataset[datestring][fips];
 		if(dataPoint){dataPoint=dataPoint[key]}else{dataPoint=0} // hack
 
-		// As of 2020-06-29, if the datapoint is missing,
-		// then the county has been historically at zero for all keys.
-		// if(dataPoint===undefined){
-		// 	dataPoint = 0;
-		// }
+		// Replace negative deltas with green
+		dataPoint = parseInt(dataPoint);
+		if(dataPoint<0) dataPoint=0;
 
 		// Color values for the county
 		let newColor = color(parseInt(dataPoint)+1);
@@ -463,12 +467,6 @@ function animate(){
 	// But for now it works, and I've got bigger fish to fry
 	// lol
 }
-
-// Calculate the RS14 metric
-function calcRS14(){
-	// Iterate over all dates
-
-};
 
 // set the global state?
 
