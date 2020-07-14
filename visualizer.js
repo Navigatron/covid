@@ -1,9 +1,9 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-07-10";
-let defaultDisplayDateDisplay = "July 10th";
-let datacsvFileSize = 111636921; // used by loading indicator
+let defaultDisplayDate = "2020-07-12";
+let defaultDisplayDateDisplay = "July 12th";
+let datacsvFileSize = 11844441; // used by loading indicator
 
 let keys = {
 	"cases": {
