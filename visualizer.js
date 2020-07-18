@@ -1,9 +1,9 @@
 'use strict';
 
 // When the page loads, what data do we show first?
-let defaultDisplayDate = "2020-07-12";
-let defaultDisplayDateDisplay = "July 12th";
-let datacsvFileSize = 11844441; // used by loading indicator
+let defaultDisplayDate = "2020-07-16";
+let defaultDisplayDateDisplay = "July 16th";
+let datacsvFileSize = 12477889; // used by loading indicator
 
 let keys = {
 	"cases": {
@@ -66,7 +66,7 @@ let colorMap = {
 let colorUndefined = "#F1F1F1";
 
 // How fast will we transition between colors?
-let transitionTime = 250;
+let transitionTime = 50;
 
 // counts of cases - populated by main.
 let dataset;
