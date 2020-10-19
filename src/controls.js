@@ -3,6 +3,7 @@ import {model} from './model';
 import * as view from './view';
 
 // Constants
+const dataSize = 15708010;
 const animationSpeed = 250; // Lower is faster
 const keys = {
 	cases: {
@@ -111,7 +112,7 @@ function main() {
 	});
 	// Set the model's progress function
 	model.progressFunc = prog => {
-		const percent = Math.round(prog.have / prog.total * 100);
+		const percent = Math.round(prog.have / dataSize * 100);
 		if (percent === 100) {
 			view.setStatusLine('Processing...');
 		} else {
