@@ -2,21 +2,15 @@
 
 [http://covidbycounty.com](http://covidbycounty.com)
 
-Showing Covid-19 case counts at a county level
+Covid-19 data at the county level.
 
-## Help find sources for states
+## Install
 
-So far, we have identified data sources for less than half of the country.
+```
+npm install
+```
 
-Sources are typically found somewhere within the department of health website for a state.
+Then:
 
-## Help update states
-
-Visit the data sources, and add the case countes to data.csv
-
-## Todo
-
-- [ ] re-arrange the svg to be better
-- [ ] Enable zoom/pan on the map
-- [ ] Add data from California
-- [ ] update existing data
+- Build with `npm run build`
+- Serve the `/docs` folder with your favorite webserver
