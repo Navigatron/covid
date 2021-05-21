@@ -3,7 +3,7 @@ import {model} from './model';
 import * as view from './view';
 
 // Constants
-const dataSize = 32027430;
+const dataSize = 35036760;
 const animationSpeed = 250; // Lower is faster
 const keys = {
 	cases: {
